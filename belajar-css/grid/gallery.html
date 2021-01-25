@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ddd;
+            text-align: center;
+            margin: 30px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .gallery {
+            width: 80%;
+            margin: 20px;
+            border: 10px solid white;
+            list-style: none;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            display: grid;
+            /* auto-fit berguna agar item mengisi tempat yg kosong ketika layout diperlebar */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>My Gallery</h2>
+    <!-- ul.gallery>li*10>img[src="img/$.jpe"] -->
+    <ul class="gallery">
+        <li><img src="img/1.jpeg" alt="gambar"></li>
+        <li><img src="img/2.jpg" alt="gambar"></li>
+        <li><img src="img/3.jpg" alt="gambar"></li>
+        <li><img src="img/4.jpg" alt="gambar"></li>
+        <li><img src="img/5.jpg" alt="gambar"></li>
+        <li><img src="img/6.jpg" alt="gambar"></li>
+        <li><img src="img/7.jpg" alt="gambar"></li>
+        <li><img src="img/8.jpg" alt="gambar"></li>
+        <li><img src="img/9.jpg" alt="gambar"></li>
+        <li><img src="img/10.jpg" alt="gambar"></li>
+    </ul>
+</body>
+</html>
