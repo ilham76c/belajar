@@ -7,7 +7,7 @@ $(document).ready(() => {
 	let catResults = '';
 	let categories = [];
 
-	$.get(_url, (data) => {
+	function renderPage(data) {		
 		$.each(data, (key, items) => {
 			dataResults += `
 				<div>
@@ -24,11 +24,35 @@ $(document).ready(() => {
 
 		$('#products').html(dataResults);
 		$('#cat_select').html('<option value="all">Semua</option>' + catResults);
+	}
+
+	// fresh data from online
+	let networkDataReceived = false;
+	let networkUpdate = fetch(_url).then(function(response) {
+		return response.json();
+	}).then(function(data) {
+		networkDataReceived = true;
+		renderPage(data);
+	});
+
+	caches.match(_url).then(function(response) {
+		if (!response) {
+			throw Error('no data on cache');
+		}
+		return response.json();
+	}).then(function(data) {
+		if (!networkDataReceived) {
+			renderPage(data);
+			console.log('render data from caches');
+		}
+	}).catch(function() {
+		return networkUpdate
 	});
 
 	$('#cat_select').on('change', function() {
 		updateProduct($(this).val());
 	});
+	
 
 	function updateProduct(cat) {
 		let _newUrl = _url;
