@@ -1,0 +1,24 @@
+{
+    "product": [
+        {"id":1,"name":"Collared lizard","category":"Goldenrod"},
+        {"id":2,"name":"Water moccasin","category":"Puce"},
+        {"id":3,"name":"Bandicoot, southern brown","category":"Violet"},
+        {"id":4,"name":"Waxbill, black-cheeked","category":"Green"},
+        {"id":5,"name":"Heron, striated","category":"Puce"},
+        {"id":6,"name":"Eastern box turtle","category":"Blue"},
+        {"id":7,"name":"Black swan","category":"Crimson"},
+        {"id":8,"name":"Painted stork","category":"Purple"},
+        {"id":9,"name":"Red-shouldered glossy starling","category":"Fuscia"},
+        {"id":10,"name":"Crab (unidentified)","category":"Goldenrod"},
+        {"id":11,"name":"Stork, black-necked","category":"Khaki"},
+        {"id":12,"name":"Mexican beaded lizard","category":"Fuscia"},
+        {"id":13,"name":"Pocket gopher (unidentified)","category":"Puce"},
+        {"id":14,"name":"Lapwing, southern","category":"Maroon"},
+        {"id":15,"name":"Porcupine, tree","category":"Violet"},
+        {"id":16,"name":"Malleefowl","category":"Violet"},
+        {"id":17,"name":"Vulture, lappet-faced","category":"Aquamarine"},
+        {"id":18,"name":"Porcupine, prehensile-tailed","category":"Fuscia"},
+        {"id":19,"name":"Pacific gull","category":"Mauv"},
+        {"id":20,"name":"Coatimundi, white-nosed","category":"Teal"}
+    ]
+}
