@@ -25,4 +25,29 @@ $(document).ready(() => {
 		$('#products').html(dataResults);
 		$('#cat_select').html('<option value="all">Semua</option>' + catResults);
 	});
+
+	$('#cat_select').on('change', function() {
+		updateProduct($(this).val());
+	});
+
+	function updateProduct(cat) {
+		let _newUrl = _url;
+		dataResults = '';
+
+		if (cat !== 'all') {
+			_newUrl = _url + '?category=' + cat;
+		}
+		$.get(_newUrl, (data) => {
+			$.each(data, (key, items) => {
+				dataResults += `
+					<div>
+						<h3>${items.name}</h3>
+						<p>${items.category}</p>
+					</div>
+				`;
+			});
+
+			$('#products').html(dataResults);
+		});
+	}
 });
