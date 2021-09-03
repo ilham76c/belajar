@@ -80,7 +80,7 @@ console.log(data2.energy);
 data2.main(5);
 console.log(data2.energy);
 
-// 3. Constructor Function
+// 4. Constructor Function
 function Mahasiswa3(nama, energy) {
   this.nama = nama;
   this.energy = energy;
