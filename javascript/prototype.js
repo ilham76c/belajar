@@ -1,29 +1,28 @@
 // Prototype
-function Mahasiswa(nama, energy) {
+function Mahasiswa(nama, ukt, jurusan) {
   this.nama = nama;
-  this.energy = energy;
+  this.ukt = ukt;
+  this.jurusan = jurusan;
 
   return this;
 }
 
-Mahasiswa.prototype.makan = function (porsi) {
-  this.energy += porsi;
-  return `Halo ${this.nama}, selamat makan!`;
+Mahasiswa.prototype.tambahUkt = function (jumlah) {
+  this.ukt += jumlah;
+  return `Total UKT: ${this.ukt}`;
 };
 
-Mahasiswa.prototype.main = function (jam) {
-  this.energy -= jam;
-  return `Halo ${this.nama}, selamat bermain!`;
+Mahasiswa.prototype.info = function () {
+  console.log(`
+    Nama: ${this.nama}
+    Jurusan: ${this.jurusan}
+    UKT: ${this.ukt}
+  `);
 };
 
-Mahasiswa.prototype.tidur = function (jam) {
-  this.energy += jam * 2;
-  return `Halo ${this.nama}, selamat tidur!`;
-};
-
-const mhs = new Mahasiswa('ilham', 20);
-
-console.log(mhs.makan(3));
+const mhs = new Mahasiswa('ilham', 250000, 'Teknik Informatika');
+mhs.tambahUkt(500000);
+mhs.info();
 
 // Class
 class Mahasiswa2 {
