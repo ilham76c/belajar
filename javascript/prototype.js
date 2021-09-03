@@ -26,26 +26,26 @@ mhs.info();
 
 // Class
 class Mahasiswa2 {
-  constructor(nama, energy) {
+  constructor(nama, ukt, jurusan) {
     this.nama = nama;
-    this.energy = energy;
+    this.ukt = ukt;
+    this.jurusan = jurusan;
   }
 
-  makan(porsi) {
-    this.energy += porsi;
-    return `Halo ${this.nama}, selamat makan!`;
+  tambahUkt(jumlah) {
+    this.ukt += jumlah;
+    return `Total UKT: ${this.ukt}`;
   }
 
-  main(jam) {
-    this.energy -= jam;
-    return `Halo ${this.nama}, selamat bermain!`;
-  }
-
-  tidur(jam) {
-    this.energy += jam * 2;
-    return `Halo ${this.nama}, selamat tidur!`;
+  info() {
+    console.log(`
+      Nama: ${this.nama}
+      Jurusan: ${this.jurusan}
+      UKT: ${this.ukt}
+    `);
   }
 }
 
-const mhs2 = new Mahasiswa2('jos', 10);
-console.log(mhs2.tidur(3));
+const mhs2 = new Mahasiswa2('ilham', 10000, 'Teknik Informatika');
+mhs2.tambahUkt(2500000);
+mhs2.info();
