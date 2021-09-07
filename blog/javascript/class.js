@@ -50,7 +50,8 @@ console.log(Luas2.name);
  * constructor bisa menggunakan keyword "super" untuk memanggil/menggunakan constructor dari super class/parent class
  */
 
- class Rectangle3 {
+// Prototype methods
+class Rectangle3 {
     constructor(height, width) {
         this.height = height;
         this.width = width;
@@ -69,3 +70,19 @@ const square = new Rectangle3(10, 10);
 
 console.log(square.area); // 100
 
+// Generator methods
+class Polygon {
+    constructor(...sides) {
+      this.sides = sides;
+    }
+    // Method
+    *getSides() {
+      for(const side of this.sides){
+        yield side;
+      }
+    }
+  }
+  
+  const pentagon = new Polygon(1,2,3,4,5);
+  
+  console.log([...pentagon.getSides()]); // [1,2,3,4,5]
