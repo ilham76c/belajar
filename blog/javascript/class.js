@@ -40,4 +40,32 @@ const Luas2 = class Luas {
 };
 console.log(Luas2.name);
 // output: "Rectangle2"
-  
+
+
+// Class body and method definitions
+/**
+ * Body class adalah bagian yang ada dalam kurung kurawal "{ }"
+ * Constructor adalah method khusus untuk membuat atau menginisialisasi object atau property yang ketika class dibuat
+ * constructor hanya boleh ada satu dalam setiap class
+ * constructor bisa menggunakan keyword "super" untuk memanggil/menggunakan constructor dari super class/parent class
+ */
+
+ class Rectangle3 {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+    // Getter
+    get area() {
+        return this.calcArea();
+    }
+    // Method
+    calcArea() {
+        return this.height * this.width;
+    }
+}
+
+const square = new Rectangle3(10, 10);
+
+console.log(square.area); // 100
+
