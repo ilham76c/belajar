@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        * {
+            /*
+                Property "box-sizing: border-box;" diterapkan ke semua element
+                agar ketika suatu element menerapkan border, padding, atau margin,
+                ukuran element tidak bertambah besar atau menggeser element disampingnya.
+                Border, padding, atau margin akan diterapkan di dalam element tersebut.
+            */
+            box-sizing: border-box;
+        }
+
+        html {
+            /*
+                Property "position: relative;" dan "min-height: 100%;" digunakan untuk membuat
+                tinggi minimal element memenuhi layar device meskipun tidak ada element di dalamnya.
+            */
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            /*
+                Property "position: block;" digunakan agar element Footer tidak bertumpuk
+                dengan element lain yang ada di dalam body.
+            */
+            position: block;
+            /*
+                ukuran margin bottom disesuaikan atau disamakan dengan tinggi Footer
+            */
+            margin: 0 0 70px 0;
+        }
+
+        header {
+            padding: 30px;
+            text-align: center;
+            border: 5px solid red;
+            background-color: yellow;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid black;
+            background-color: coral;
+            height: 200px;
+        }
+
+        footer {
+            /*
+                Property utama agar Footer tetap berada dibawah.
+            */
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+
+            /*
+                Property tambahan agar text di dalam Footer berada di tengah.
+            */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid red;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <main>Main</main>
+    <Footer>Footer</Footer>
+</body>
+</html>
