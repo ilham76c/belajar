@@ -40,6 +40,18 @@ export default {
       this.nama = 'Okee';
     },
   },
+  beforeCreate() {
+    console.log('Before create');
+  },
+  created() {
+    console.log('Created');
+  },
+  beforeMount() {
+    console.log('Before mount');
+  },
+  mounted() {
+    console.log('Mounted');
+  }
 }
 </script>
 
