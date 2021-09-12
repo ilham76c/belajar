@@ -1,6 +1,7 @@
 <template>
   <h2>Nama: {{ nama }}</h2>
   <button v-on:click="changeName">Change Name</button>
+  <p><a v-bind:href="url">Blog</a></p>
 </template>
 
 <script>
@@ -10,7 +11,8 @@ export default {
   data() {
     return {
       nama: 'Moh. Ilham B.',
-    };
+      url: 'https://pacman97.blogspot.com/'
+    }
   },
   methods: {
     changeName() {
