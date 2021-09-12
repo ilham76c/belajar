@@ -41,10 +41,12 @@ export default {
     },
   },
   beforeCreate() {
+    // jika ingin menjalankan fungsi sebelum komponen dibuat
     console.log('Before create');
   },
   created() {
     console.log('Created');
+    this.products.push({id: 6, title: 'Product 6', price: 600});
   },
   beforeMount() {
     console.log('Before mount');
