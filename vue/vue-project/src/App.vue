@@ -21,12 +21,17 @@
       {{ item.title }} - {{ item.price }}
     </li>
   </ul>
+  <Header/>
 </template>
 
 <script>
+import Header from '@/components/Header.vue';
 
 export default {
   name: 'App',
+  components: {
+    Header
+  },
   data() {
     return {
       nama: 'Moh. Ilham B.',
