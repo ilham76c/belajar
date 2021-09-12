@@ -4,6 +4,17 @@
   <p><a v-bind:href="url">Blog</a></p>
   <p><input type="text" v-model="alamat"></p>
   <p>Alamat: {{ alamat }}</p>
+
+  <div v-if="products.length">
+    <ul>
+      <li v-for="item in products" :key="item.id">
+        {{ item.title }} - {{ item.price }}
+      </li>
+    </ul>
+  </div>
+  <div v-else>
+    <p>No Data Found!</p>
+  </div>
 </template>
 
 <script>
@@ -15,6 +26,13 @@ export default {
       nama: 'Moh. Ilham B.',
       url: 'https://pacman97.blogspot.com/',
       alamat: '',
+      products: [
+        {id: 1, title: 'Product 1', price: 100},
+        {id: 2, title: 'Product 2', price: 200},
+        {id: 3, title: 'Product 3', price: 300},
+        {id: 4, title: 'Product 4', price: 400},
+        {id: 5, title: 'Product 5', price: 500},
+      ],
     }
   },
   methods: {
