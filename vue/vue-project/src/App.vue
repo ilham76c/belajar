@@ -21,7 +21,7 @@
       {{ item.title }} - {{ item.price }}
     </li>
   </ul>
-  <Header :text="text"/>
+  <Header @changeTitle="ubahText" :text="text"/>
 </template>
 
 <script>
@@ -52,6 +52,9 @@ export default {
     changeName() {
       this.nama = 'Okee';
     },
+    ubahText(newText) {
+      this.text = newText;
+    }
   },
   beforeCreate() {
     // jika ingin menjalankan fungsi sebelum komponen dibuat
