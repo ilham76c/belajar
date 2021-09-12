@@ -21,7 +21,7 @@
       {{ item.title }} - {{ item.price }}
     </li>
   </ul>
-  <Header/>
+  <Header :text="text"/>
 </template>
 
 <script>
@@ -45,6 +45,7 @@ export default {
         {id: 5, title: 'Product 5', price: 500},
       ],
       cari: '',
+      text: 'Ini adalah text dari App.vue',
     }
   },
   methods: {
