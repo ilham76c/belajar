@@ -15,6 +15,12 @@
   <div v-else>
     <p>No Data Found!</p>
   </div>
+  <input type="text" v-model="cari" placeholder="Cari">
+  <ul>
+    <li v-for="item in cariData" :key="item.id">
+      {{ item.title }} - {{ item.price }}
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -33,6 +39,7 @@ export default {
         {id: 4, title: 'Product 4', price: 400},
         {id: 5, title: 'Product 5', price: 500},
       ],
+      cari: '',
     }
   },
   methods: {
@@ -53,6 +60,14 @@ export default {
   },
   mounted() {
     console.log('Mounted');
+  },
+  // computed property adalah property yg dapat digunakan untuk mendefinisikan data yg nilainya dari data lain
+  computed: {
+    cariData() {
+      return this.products.filter((item) => {
+        return item.title.match(this.cari);
+      });
+    }
   }
 }
 </script>
