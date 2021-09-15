@@ -52,7 +52,7 @@ console.log([...pentagon.getSides()]);
 // Output: [1,2,3,4,5]
 
 /**
- * # Static Methods and Properties #
+ * # Static Methods and Properties (strict mode) #
  * 
  */
 class Point {
@@ -81,4 +81,23 @@ console.log(Point.displayName);
 // Output: "Point"
 console.log(Point.distance(point1, point2)); 
 // Output: 7.0710678118654755
-  
+
+/**
+ * # Static Methods and Properties (non - strict mode) #
+ */
+function Animal() { }
+
+Animal.prototype.speak = function() {
+    return this;
+}
+
+Animal.eat = function() {
+    return this;
+}
+
+let obj = new Animal();
+let speak = obj.speak;
+speak(); // global object (in non–strict mode)
+
+let eat = Animal.eat;
+eat(); // global object (in non-strict mode)
