@@ -97,7 +97,7 @@ Animal.eat = function() {
 
 let obj = new Animal();
 let speak = obj.speak;
-speak(); // global object (in non–strict mode)
+speak(); // Output: global object (in non–strict mode)
 
 let eat = Animal.eat;
-eat(); // global object (in non-strict mode)
+eat(); // Output: global object (in non-strict mode)
