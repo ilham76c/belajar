@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-
+let connection = false;
 // Option 1: Passing a connection URI
 //const sequelize = new Sequelize('sqlite::memory:') // Example for sqlite
 //const sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname') // Example for postgres
@@ -13,15 +13,25 @@ const { Sequelize } = require('sequelize');
 module.exports = {
     createConnection: () => {
         try {
-            const sequelize = new Sequelize('postgres', 'postgres', 'postgres', {
+            connection = new Sequelize('postgres', 'postgres', 'postgres', {
                 host: 'localhost',
                 dialect: 'postgres' /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
             });
     
-            sequelize.authenticate();
+            connection.authenticate();
             console.log('Connection has been established successfully.');
     
-            return sequelize;
+            return connection;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    closeConnection: () => {
+        try {
+            if (connection !== false) {
+                connection.close();    
+                console.log('Connection has been closed.')
+            }
         } catch (error) {
             console.log(error);
         }
