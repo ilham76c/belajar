@@ -1,4 +1,9 @@
 /**
+ * # Class Body and Method Definitions #
+ * 
+ */
+
+/**
  * # Static Methods and Properties (strict mode) #
  * 
  */

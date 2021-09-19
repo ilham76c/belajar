@@ -27,14 +27,13 @@ class Rectangle {
 }
 
 const square = new Rectangle(10, 10);
-console.log(square.area); 
-// Output: 100
+square.area; // Output: 100
+
 
 /**
  * # Generator Methods #
  * 
  */
-
 class Polygon {
     constructor(...sides) {
         this.sides = sides;
@@ -48,56 +47,4 @@ class Polygon {
 }
   
 const pentagon = new Polygon(1,2,3,4,5);
-console.log([...pentagon.getSides()]); 
-// Output: [1,2,3,4,5]
-
-/**
- * # Static Methods and Properties (strict mode) #
- * 
- */
-class Point {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-  
-    static displayName = "Point";
-    static distance(a, b) {
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-    
-        return Math.hypot(dx, dy);
-    }
-}
-  
-const point1 = new Point(5, 5);
-const point2 = new Point(10, 10);
-point1.displayName; // undefined
-point1.distance;    // undefined
-point2.displayName; // undefined
-point2.distance;    // undefined
-
-console.log(Point.displayName);
-// Output: "Point"
-console.log(Point.distance(point1, point2)); 
-// Output: 7.0710678118654755
-
-/**
- * # Static Methods and Properties (non - strict mode) #
- */
-function Animal() { }
-
-Animal.prototype.speak = function() {
-    return this;
-}
-
-Animal.eat = function() {
-    return this;
-}
-
-let obj = new Animal();
-let speak = obj.speak;
-speak(); // Output: global object (in non–strict mode)
-
-let eat = Animal.eat;
-eat(); // Output: global object (in non-strict mode)
+[...pentagon.getSides()]; // Output: [1,2,3,4,5]
