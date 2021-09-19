@@ -1,3 +1,4 @@
+// file db.json digunakan oleh project simple-pwa
 {
     "product": [
         {"id":1,"name":"Collared lizard","category":"Goldenrod"},
