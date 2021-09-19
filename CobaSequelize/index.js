@@ -144,13 +144,66 @@ const app = {
       console.error(error);
     }
   },
+  // FULL OUTER JOIN: semua data left table dan right table diambil meskipun tidak cocok
+  getCustomers6: async () => {
+    try {
+      const connection = db.createConnection();
+      const result = await connection.query(`
+        SELECT 
+          cus.customer_id, cus.customer_name, con.contact_name, con.phone, con.email
+        FROM 
+          customers as cus
+        FULL OUTER JOIN 
+          contacts as con
+        ON 
+          cus.customer_id = con.customer_id;
+      `, { type: QueryTypes.SELECT });
+      
+      db.closeConnection();
+
+      if (result.length) {
+        return result;
+      }
+
+      return 'Failed to get data customers';
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  // FULL OUTER JOIN & WHERE: mengambil semua data yg cocok atau tidak cocok dengan clause WHERE
+  getCustomers7: async () => {
+    try {
+      const connection = db.createConnection();
+      const result = await connection.query(`
+        SELECT 
+          cus.customer_id, cus.customer_name, con.contact_name, con.phone, con.email
+        FROM 
+          customers as cus
+        FULL OUTER JOIN 
+          contacts as con
+        ON 
+          cus.customer_id = con.customer_id
+        WHERE
+          cus.customer_id IS NULL OR con.customer_id IS NULL;
+      `, { type: QueryTypes.SELECT });
+      
+      db.closeConnection();
+
+      if (result.length) {
+        return result;
+      }
+
+      return 'Failed to get data customers';
+    } catch (error) {
+      console.error(error);
+    }
+  },
 }
 
-app.getCustomers5()
+app.getCustomers7()
   .then(result => {
     console.log(result);
   })
   .catch(error => {
     console.log(error);
   });
-  
