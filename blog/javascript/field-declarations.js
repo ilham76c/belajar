@@ -19,8 +19,7 @@ class Rectangle1 {
     }
 }
 const rec1 = new Rectangle1(10, 15);
-console.log(rec1.height);
-// Output: 10
+rec1.height; // Output: 10
   
 
 /**
@@ -43,5 +42,4 @@ class Rectangle2 {
     }
 }
 const rec2 = new Rectangle2(10, 15);
-console.log(rec2.height);
-// Output: undefined
+rec2.height; // Output: undefined
