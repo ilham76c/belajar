@@ -15,8 +15,7 @@ class Rectangle1 {
 }
 
 const rectangle1 = new Rectangle1(10,15);
-console.log(rectangle1.height);
-// output: 10
+rectangle1.height; // output: 10
 
 
 /**
@@ -27,22 +26,24 @@ console.log(rectangle1.height);
  * nama class bisa diakses melalui property name
  */
 
-// unnamed class
+/**
+ * # unnamed class #
+ */
 const Rectangle2 = class {
     constructor(height, width) {
         this.height = height;
         this.width = width;
     }
 };
-console.log(Rectangle2.name);
-// output: "Rectangle2"
+Rectangle2.name; // output: "Rectangle2"
 
-// named class
+/**
+ * # named class #
+ */
 const Rectangle3 = class Rectangle {
     constructor(height, width) {
         this.height = height;
         this.width = width;
     }
 };
-console.log(Rectangle3.name);
-// output: "Rectangle"
+Rectangle3.name; // output: "Rectangle"
