@@ -47,4 +47,6 @@ class Polygon {
 }
   
 const pentagon = new Polygon(1,2,3,4,5);
-[...pentagon.getSides()]; // Output: [1,2,3,4,5]
+const sides = pentagon.getSides(); // Output: [1,2,3,4,5]
+sides.next().value; // Output: 1
+sides.next().value; // Output: 2
