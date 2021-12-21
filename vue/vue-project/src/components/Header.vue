@@ -1,7 +1,9 @@
 <template>
-    <h2>Header</h2>
-    <p>{{ text }}</p>
-    <button @click="changeText">Ubah text</button>
+    <div>
+        <h2>Header</h2>
+        <p>{{ text }}</p>
+        <button @click="changeText">Ubah text</button>
+    </div>
 </template>
 
 <script>
