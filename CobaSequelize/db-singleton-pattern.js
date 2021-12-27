@@ -1,5 +1,5 @@
 /* import library Sequelize */
-const { Sequelize, QueryTypes } = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 class Database {
     /* property untuk menampung instance yang dibuat */
@@ -42,11 +42,6 @@ class Database {
     }
 }
 
-const db = Database.getInstance();
-async function getData() {
-    return await db.query("SELECT * FROM contacts", { type: QueryTypes.SELECT });
-}
-
-getData().then(result => {
-    console.log(result);
-});
+module.exports = {
+    Database,
+};
