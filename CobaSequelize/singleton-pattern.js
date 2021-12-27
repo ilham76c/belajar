@@ -1,16 +1,11 @@
+/* import library Sequelize */
 const { Sequelize, QueryTypes } = require('sequelize');
 
 class Database {
+    /* property untuk menampung instance yang dibuat */
     static #instance = null;
 
-    constructor() {
-        try {
-            
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
+    /* function untuk membuat instance object koneksi ke database */
     static getInstance() {
         try {
             if (this.#instance === null) {
@@ -31,6 +26,7 @@ class Database {
         }
     }
 
+    /* function untuk menghapus atau mengganti instance yang tersimpan pada property "#instance" dengan nilai "null" */
     static destroyInstance() {
         try {
             if (this.#instance !== null) {
