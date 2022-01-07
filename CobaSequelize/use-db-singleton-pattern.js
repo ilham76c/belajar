@@ -8,12 +8,12 @@ const { Database } = require('./db-singleton-pattern');
 const db = Database.getInstance();
 
 /* contoh function untuk melakukan query ke database menggunakan instance yang di dapatkan dari class Database */
-async function getData() {
-    return await db.query("SELECT * FROM contacts", { type: QueryTypes.SELECT });
-}
+// async function getData() {
+//     return await db.query("SELECT * FROM contacts", { type: QueryTypes.SELECT });
+// }
 
 /* panggil function getData() untuk mengeksekusi query */
-getData()
+db.query("SELECT * FROM contacts", { type: QueryTypes.SELECT })
     .then(result => {
         /* jika berhasil tampilkan hasil dari query */
         console.log(result);
