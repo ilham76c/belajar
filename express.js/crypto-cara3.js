@@ -53,8 +53,8 @@ function decryptString (ciphertext, privateKeyFile) {
 
 // Defining a text to be encrypted
 const plainText = {
-  username: 'ilham',
-  role: 'admin'
+	client_uid: "212a52d6-6754-4c2c-a349-2e8656af9545",
+	client_name: "PDAM Tirta Pakuan"
 }
 
 // Defining encrypted text
