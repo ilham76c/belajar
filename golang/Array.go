@@ -15,8 +15,9 @@ func main() {
 	fmt.Println(colors[2])
 
 	// deklarasi array dengan values
-	var name = [3]string {"Moh.", "Ilham", "Burhanuddin"}
+	var name = [5]string {"Moh.", "Ilham", "Burhanuddin"}
 	fmt.Println(name)
 
+	// function len() berfungsi untuk menghitung panjang array dan bukan jumlah data pada array
 	fmt.Println("Panjang array name = ", len(name))
 }
