@@ -7,7 +7,7 @@ func main() {
 }
 
 func runApp(value int) {
-	// function log akan tetap dijalankan walaupun terjadi error
+	// defer function adalah function yg dieksekusi setelah sebuah function dieksekusi walaupun terjadi error
 	defer log()
 	fmt.Println("Run application...")
 	result := 10 / value
