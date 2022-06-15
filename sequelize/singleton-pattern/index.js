@@ -2,7 +2,7 @@
 const { QueryTypes } = require('sequelize');
 
 /* import class Database */
-const { Database } = require('./db-singleton-pattern');
+const { Database } = require('./connection');
 
 /* panggil function getInstance() dari class Database untuk mendapatkan instance */
 const db = Database.getInstance();
