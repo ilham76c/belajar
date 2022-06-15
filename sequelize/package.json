@@ -1,5 +1,5 @@
 {
-  "name": "CobaSequelize",
+  "name": "sequelize",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,8 +9,10 @@
   "author": "Moh. Ilham Burhanuddin",
   "license": "MIT",
   "dependencies": {
+    "mysql": "^2.18.1",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.6.5"
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.4.1"
   }
 }
