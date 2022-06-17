@@ -32,4 +32,8 @@ func main() {
 	)
 
 	fmt.Println(value)
+
+	// string to int (Atoi), int to string (Itoa)
+	valueInt, err := strconv.Atoi("3000")
+	fmt.Println(valueInt)
 }
