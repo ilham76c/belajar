@@ -1,0 +1,32 @@
+.main {
+  background-color: lightblue;
+
+  // sama seperti .main-heading
+  &-heading {
+    font-size: 2em;
+  }
+
+  // sama seperti .main-paragraph
+  &-paragraph {
+    font-size: 1.4em;
+  }
+}
+
+.main, footer {
+  h1, p {
+    letter-spacing: 1px;
+  }
+}
+
+.footer-heading {
+  // &: parent selector
+  // "footer &" adalah element yg ada di atas main atau parent dari .footer-heading
+  footer & {
+    background-color: green;
+  }
+
+  // sama seperti .footer-heading:hover
+  &:hover {
+    color: yellow;
+  }
+}
