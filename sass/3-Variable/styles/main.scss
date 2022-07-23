@@ -1,0 +1,59 @@
+// CSS variable
+// :root {
+//   --primary-color: cyan;
+//   --secondary-color: silver;
+//   --text-color: #e07a5f;
+// }
+
+// body {
+//   background-color: var(--primary-color);
+// }
+
+
+// SASS variable
+// karakter "-" dan "_" adalah sama jika digunakan pada variable
+
+// global variable
+$primary-color: lightblue;
+
+body {
+  background-color: $primary-color;
+}
+
+h1 {
+  /* variable local akan berbeda nilainya dengan variable globah meskipun di definisikan dengan nama yang sama */
+  /* tapi jika variable local dibuat menjadi global maka variable global dengan nama yang sama akan tertimpa */
+  $primary-color: green;
+  color: $primary-color;
+}
+
+p {
+  // local variable
+  $p-color: darkorchid;
+  $span-color: red;
+  /* !global berfungsi untuk mengubah variable local menjadi global */
+  $b-color: black !global;
+
+  color: $p-color;
+
+  span {
+    color: $span-color;
+  }
+}
+
+b {
+  color: $b-color; // $b-color ada variable local yg diubah menjadi global
+}
+
+
+// SASS Map
+$alert: (
+  'danger': red,
+  'success': green,
+  'warning': darkorange
+);
+
+.warning {
+  color: map-get($alert, 'warning');
+  font-size: larger;
+}
