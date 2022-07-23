@@ -1,0 +1,43 @@
+@mixin inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.header ul {
+  @include inline-list();
+
+  li {
+    color: green;
+  }
+}
+
+.footer ul {
+  @include inline-list();
+
+  a {
+    color: blueviolet;
+  }
+}
+
+// arguments pada mixin
+@mixin flex($direction: row, $justify-content: start, $gap: 5px) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+.main {
+  @include flex(row-reverse, start, 10px);
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+  }
+}
