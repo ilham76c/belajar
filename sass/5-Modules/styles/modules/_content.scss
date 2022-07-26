@@ -1,0 +1,17 @@
+// @use 'mixin';
+@use 'mixin' as m;
+
+// arguments pada mixin
+.main {
+  // @include mixin.flex(row-reverse, start, 10px);
+  @include m.flex(row-reverse, start, 10px);
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

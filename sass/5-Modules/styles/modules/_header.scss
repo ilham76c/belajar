@@ -1,0 +1,9 @@
+@use 'mixin' as m;
+
+.header ul {
+  @include m.inline-list();
+
+  li {
+    color: green;
+  }
+}

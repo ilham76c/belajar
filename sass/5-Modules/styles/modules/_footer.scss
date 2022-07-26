@@ -1,0 +1,9 @@
+@use 'mixin' as m;
+
+.footer ul {
+  @include m.inline-list();
+
+  a {
+    color: blueviolet;
+  }
+}

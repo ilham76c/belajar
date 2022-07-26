@@ -1,0 +1,15 @@
+// @import 'modules/mixin'; 
+/* 
+  Fitur "@import" sudah diadopsi oleh css biasa, jadi direkomendasikan untuk menggunakan "@use".
+  Berbeda dengan @import, @use harus di include di dalam file yang membutuhkan.
+  @use tidak membuat file yg di include menjadi global,
+  sedangkan @import akan membuat file yang di include menjadi global
+*/
+// @import 'modules/header';
+// @import 'modules/content';
+// @import 'modules/footer';
+
+
+@use 'modules/header';
+@use 'modules/content';
+@use 'modules/footer';
