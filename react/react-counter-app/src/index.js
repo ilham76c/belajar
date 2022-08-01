@@ -1,17 +1,49 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
+import IncreaseButton from './components/IncreaseButton';
+import CounterDisplay from './components/CounterDisplay';
+import ResetButton from './components/ResetButton';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+class CounterApp extends React.Component {
+  constructor(props) {
+    super(props);
+ 
+    // inisialisasi nilai count di dalam state
+    this.state = {
+      count: 0
+    };
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    // binding event handler
+    this.onIncreaseEventHandler = this.onIncreaseEventHandler.bind(this);
+    this.onResetEventHandler = this.onResetEventHandler.bind(this);
+  }
+ 
+  render() {
+    return (
+      <div>
+        <IncreaseButton increase={this.onIncreaseEventHandler} />
+        <CounterDisplay count={this.state.count} />
+        <ResetButton reset={this.onResetEventHandler} />
+      </div>
+    );
+  }
+
+  onIncreaseEventHandler() {
+    this.setState((previousState) => {
+      return {
+        count: previousState.count + 1
+      };
+    });
+  }
+
+  onResetEventHandler() {
+    this.setState(() => {
+      return {
+        count: 0
+      };
+    });
+  }
+}
+ 
+const root = createRoot(document.getElementById('root'));
+root.render(<CounterApp />);
