@@ -84,12 +84,15 @@ class ContactInput extends React.Component {
               </h3>
               <form className='space-y-6' onSubmit={this.onSubmitEventHandler}>
                 <div>
-                  <label
-                    htmlFor='judul'
-                    className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
-                  >
-                    Judul
-                  </label>
+                  <div className='flex justify-between'>
+                    <label
+                      htmlFor='judul'
+                      className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+                    >
+                      Judul
+                    </label>
+                    <span className='text-sm'>Sisa karakter: { 50 - this.state.title.length}</span>
+                  </div>
                   <input
                     type='text'
                     name='judul'
@@ -99,6 +102,7 @@ class ContactInput extends React.Component {
                     value={this.state.title}
                     onChange={this.onTitleChangeEventHandler}
                     required={true}
+                    maxLength='50'
                   />
                 </div>
                 <div>
