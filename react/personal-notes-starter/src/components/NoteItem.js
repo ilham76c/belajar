@@ -5,7 +5,7 @@ function NoteItem({ id, title, note, date, arsip, deleteNote, arsipNote }) {
     <div key={id} className="flex flex-col justify-between gap-2 rounded-lg bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
       <div className="p-3">
         <h1 className="font-bold text-lg">{title}</h1>
-        <span className="text-sm my-1">{date}</span>
+        <span className="text-sm text-yellow-200 my-1">{date}</span>
         <p className="mt-2">
           {note}
         </p>
