@@ -6,7 +6,7 @@ import SearchBar from "./components/SearchBar";
 import Button from "./components/Button";
 
 // import style
-import "./styles/index.css";
+import "./styles/style.css";
 
 class NotesApp extends React.Component {
   constructor(props) {
