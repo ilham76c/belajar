@@ -4,6 +4,7 @@ import NoteForm from "./components/NoteForm";
 import NoteList from "./components/NoteList";
 import SearchBar from "./components/SearchBar";
 import Button from "./components/Button";
+import { getInitialData } from "./utils/index";
 
 // import style
 import "./styles/style.css";
@@ -15,7 +16,7 @@ class NotesApp extends React.Component {
     // inisialisasi nilai count di dalam state
     this.state = {
       showModal: false,
-      notes: [],
+      notes: getInitialData(),
       search: "",
       filter: "nofilter",
     };
@@ -52,7 +53,7 @@ class NotesApp extends React.Component {
   arsipNote(id) {
     const notes = this.state.notes.map((obj) => {
       if (obj.id === id) {
-        obj.arsip = !obj.arsip;
+        obj.archived = !obj.archived;
       }
 
       return obj;
@@ -73,13 +74,13 @@ class NotesApp extends React.Component {
   }
 
   searchText(obj, text) {
-    return `${obj.title} ${obj.note}`.toLocaleLowerCase().includes(text);
+    return `${obj.title} ${obj.body}`.toLocaleLowerCase().includes(text);
   }
 
   getListNotes() {
     return this.state.notes.filter(
       (obj) =>
-        obj.arsip === false &&
+        obj.archived === false &&
         this.searchText(obj, this.state.search) &&
         ["nofilter", "aktif"].includes(this.state.filter)
     );
@@ -88,7 +89,7 @@ class NotesApp extends React.Component {
   getListArsip() {
     return this.state.notes.filter(
       (obj) =>
-        obj.arsip === true &&
+        obj.archived === true &&
         this.searchText(obj, this.state.search) &&
         ["nofilter", "arsip"].includes(this.state.filter)
     );
@@ -118,13 +119,19 @@ class NotesApp extends React.Component {
               <span>
                 Catatan{" "}
                 <span className="inline-block rounded-full px-1 bg-rose-400 text-center">
-                  {this.state.notes.filter((obj) => obj.arsip === false).length}
+                  {
+                    this.state.notes.filter((obj) => obj.archived === false)
+                      .length
+                  }
                 </span>
               </span>
               <span>
                 Diarsipkan{" "}
                 <span className="inline-block rounded-full px-1 bg-rose-400 text-center">
-                  {this.state.notes.filter((obj) => obj.arsip === true).length}
+                  {
+                    this.state.notes.filter((obj) => obj.archived === true)
+                      .length
+                  }
                 </span>
               </span>
             </div>

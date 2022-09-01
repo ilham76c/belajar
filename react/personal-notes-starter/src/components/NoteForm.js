@@ -6,11 +6,11 @@ class ContactInput extends React.Component {
 
     // inisialisasi state
     this.state = {
-      id: +new Date(),
+      id: "",
       title: "",
-      date: new Date().toLocaleString(),
-      note: "",
-      arsip: false,
+      createdAt: "",
+      body: "",
+      archived: false,
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -29,7 +29,7 @@ class ContactInput extends React.Component {
   onNoteChangeEventHandler(event) {
     this.setState(() => {
       return {
-        note: event.target.value,
+        body: event.target.value,
       };
     });
   }
@@ -40,8 +40,8 @@ class ContactInput extends React.Component {
     this.setState({
       id: +new Date(),
       title: "",
-      date: new Date().toLocaleString(),
-      note: "",
+      createdAt: new Date(),
+      body: "",
     });
   }
 
@@ -119,7 +119,7 @@ class ContactInput extends React.Component {
                       Note
                     </label>
                     <span className="text-sm">
-                      Sisa karakter: {190 - this.state.note.length}
+                      Sisa karakter: {190 - this.state.body.length}
                     </span>
                   </div>
                   <textarea
@@ -128,7 +128,7 @@ class ContactInput extends React.Component {
                     id="note"
                     placeholder="Note"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    value={this.state.note}
+                    value={this.state.body}
                     onChange={this.onNoteChangeEventHandler}
                     required={true}
                     maxLength="190"
