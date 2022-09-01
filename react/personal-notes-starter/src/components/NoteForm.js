@@ -9,25 +9,27 @@ class ContactInput extends React.Component {
       title: "",
       body: "",
       archived: false,
+      maxTitle: 50,
+      maxBody: 190
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
-    this.onNoteChangeEventHandler = this.onNoteChangeEventHandler.bind(this);
+    this.onBodyChangeEventHandler = this.onBodyChangeEventHandler.bind(this);
     this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
   }
 
   onTitleChangeEventHandler(event) {
     this.setState(() => {
       return {
-        title: event.target.value,
+        title: event.target.value.slice(0, this.state.maxTitle)
       };
     });
   }
 
-  onNoteChangeEventHandler(event) {
+  onBodyChangeEventHandler(event) {
     this.setState(() => {
       return {
-        body: event.target.value,
+        body: event.target.value.slice(0, this.state.maxBody)
       };
     });
   }
@@ -95,7 +97,7 @@ class ContactInput extends React.Component {
                       Judul
                     </label>
                     <span className="text-sm">
-                      Sisa karakter: {50 - this.state.title.length}
+                      Sisa karakter: {this.state.maxTitle - this.state.title.length}
                     </span>
                   </div>
                   <input
@@ -107,7 +109,6 @@ class ContactInput extends React.Component {
                     value={this.state.title}
                     onChange={this.onTitleChangeEventHandler}
                     required={true}
-                    maxLength="50"
                   />
                 </div>
                 <div>
@@ -119,7 +120,7 @@ class ContactInput extends React.Component {
                       Note
                     </label>
                     <span className="text-sm">
-                      Sisa karakter: {190 - this.state.body.length}
+                      Sisa karakter: {this.state.maxBody - this.state.body.length}
                     </span>
                   </div>
                   <textarea
@@ -129,9 +130,8 @@ class ContactInput extends React.Component {
                     placeholder="Note"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     value={this.state.body}
-                    onChange={this.onNoteChangeEventHandler}
+                    onChange={this.onBodyChangeEventHandler}
                     required={true}
-                    maxLength="190"
                   />
                 </div>
                 <button
