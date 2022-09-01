@@ -135,23 +135,33 @@ class NotesApp extends React.Component {
                 </span>
               </span>
             </div>
+
             {/* catatan */}
             <div className="flex flex-col mt-4">
               <h1 className="text-lg font-bold">Catatan</h1>
-              <NoteList
-                notes={this.getListNotes()}
-                deleteNote={this.deleteNote}
-                arsipNote={this.arsipNote}
-              />
+              {this.state.notes.some((obj) => obj.archived === false) ? (
+                <NoteList
+                  notes={this.getListNotes()}
+                  deleteNote={this.deleteNote}
+                  arsipNote={this.arsipNote}
+                />
+              ) : (
+                <span className="mt-2 text-slate-400">Tidak ada catatan</span>
+              )}
             </div>
+
             {/* arsip */}
             <div className="flex flex-col mt-4">
               <h1 className="text-lg font-bold">Arsip</h1>
-              <NoteList
-                notes={this.getListArsip()}
-                deleteNote={this.deleteNote}
-                arsipNote={this.arsipNote}
-              />
+              {this.state.notes.some((obj) => obj.archived === true) ? (
+                <NoteList
+                  notes={this.getListArsip()}
+                  deleteNote={this.deleteNote}
+                  arsipNote={this.arsipNote}
+                />
+              ) : (
+                <span className="mt-2 text-slate-400">Tidak ada arsip</span>
+              )}
             </div>
           </div>
         </div>
