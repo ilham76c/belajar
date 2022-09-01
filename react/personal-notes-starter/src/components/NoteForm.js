@@ -10,7 +10,7 @@ class ContactInput extends React.Component {
       body: "",
       archived: false,
       maxTitle: 50,
-      maxBody: 190
+      maxBody: 190,
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -21,7 +21,7 @@ class ContactInput extends React.Component {
   onTitleChangeEventHandler(event) {
     this.setState(() => {
       return {
-        title: event.target.value.slice(0, this.state.maxTitle)
+        title: event.target.value.slice(0, this.state.maxTitle),
       };
     });
   }
@@ -29,7 +29,7 @@ class ContactInput extends React.Component {
   onBodyChangeEventHandler(event) {
     this.setState(() => {
       return {
-        body: event.target.value.slice(0, this.state.maxBody)
+        body: event.target.value.slice(0, this.state.maxBody),
       };
     });
   }
@@ -39,7 +39,7 @@ class ContactInput extends React.Component {
     this.props.addNote({
       ...this.state,
       id: +new Date(),
-      createdAt: new Date()
+      createdAt: new Date(),
     });
     this.setState({
       title: "",
@@ -97,7 +97,8 @@ class ContactInput extends React.Component {
                       Judul
                     </label>
                     <span className="text-sm">
-                      Sisa karakter: {this.state.maxTitle - this.state.title.length}
+                      Sisa karakter:{" "}
+                      {this.state.maxTitle - this.state.title.length}
                     </span>
                   </div>
                   <input
@@ -120,7 +121,8 @@ class ContactInput extends React.Component {
                       Note
                     </label>
                     <span className="text-sm">
-                      Sisa karakter: {this.state.maxBody - this.state.body.length}
+                      Sisa karakter:{" "}
+                      {this.state.maxBody - this.state.body.length}
                     </span>
                   </div>
                   <textarea

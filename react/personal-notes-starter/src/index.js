@@ -1,13 +1,13 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import NoteForm from "./components/NoteForm";
-import NoteList from "./components/NoteList";
-import SearchBar from "./components/SearchBar";
-import Button from "./components/Button";
-import { getInitialData } from "./utils/index";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import NoteForm from './components/NoteForm';
+import NoteList from './components/NoteList';
+import SearchBar from './components/SearchBar';
+import Button from './components/Button';
+import { getInitialData } from './utils/index';
 
 // import style
-import "./styles/style.css";
+import './styles/style.css';
 
 class NotesApp extends React.Component {
   constructor(props) {
@@ -17,8 +17,8 @@ class NotesApp extends React.Component {
     this.state = {
       showModal: false,
       notes: getInitialData(),
-      search: "",
-      filter: "nofilter",
+      search: '',
+      filter: 'nofilter',
     };
 
     // binding event handler
@@ -82,7 +82,7 @@ class NotesApp extends React.Component {
       (obj) =>
         obj.archived === false &&
         this.searchText(obj, this.state.search) &&
-        ["nofilter", "aktif"].includes(this.state.filter)
+        ['nofilter', 'aktif'].includes(this.state.filter)
     );
   }
 
@@ -91,23 +91,23 @@ class NotesApp extends React.Component {
       (obj) =>
         obj.archived === true &&
         this.searchText(obj, this.state.search) &&
-        ["nofilter", "arsip"].includes(this.state.filter)
+        ['nofilter', 'arsip'].includes(this.state.filter)
     );
   }
 
   render() {
     return (
-      <div className="bg-gradient-to-r from-violet-900 to-fuchsia-700 min-h-screen w-screen">
-        <div className="flex flex-row text-white">
+      <div className='bg-gradient-to-r from-violet-900 to-fuchsia-700 min-h-screen w-screen'>
+        <div className='flex flex-row text-white'>
           {/* content */}
-          <div className="basis-full p-5">
-            <div className="flex items-center justify-between">
+          <div className='basis-full p-5'>
+            <div className='flex items-center justify-between'>
               {/* title */}
-              <h1 className="text-xl">Personal Notes</h1>
+              <h1 className='text-xl'>Personal Notes</h1>
               {/* button add new note */}
               <Button
                 onClickEventHandler={this.toggleModalForm}
-                value="New Note"
+                value='New Note'
               />
             </div>
             {/* filter & search bar */}
@@ -115,10 +115,10 @@ class NotesApp extends React.Component {
               searchEventHandler={this.searchEventHandler}
               filterEventHandler={this.filterEventHandler}
             />
-            <div className="flex gap-x-4 mt-3 text-sm">
+            <div className='flex gap-x-4 mt-3 text-sm'>
               <span>
-                Catatan{" "}
-                <span className="inline-block rounded-full px-1 bg-rose-400 text-center">
+                Catatan{' '}
+                <span className='inline-block rounded-full px-1 bg-rose-400 text-center'>
                   {
                     this.state.notes.filter((obj) => obj.archived === false)
                       .length
@@ -126,8 +126,8 @@ class NotesApp extends React.Component {
                 </span>
               </span>
               <span>
-                Diarsipkan{" "}
-                <span className="inline-block rounded-full px-1 bg-rose-400 text-center">
+                Diarsipkan{' '}
+                <span className='inline-block rounded-full px-1 bg-rose-400 text-center'>
                   {
                     this.state.notes.filter((obj) => obj.archived === true)
                       .length
@@ -137,8 +137,8 @@ class NotesApp extends React.Component {
             </div>
 
             {/* catatan */}
-            <div className="flex flex-col mt-4">
-              <h1 className="text-lg font-bold">Catatan</h1>
+            <div className='flex flex-col mt-4'>
+              <h1 className='text-lg font-bold'>Catatan</h1>
 
               <NoteList
                 notes={this.getListNotes()}
@@ -147,20 +147,20 @@ class NotesApp extends React.Component {
               />
               {this.getListNotes().length === 0 ? (
                 this.state.search.length ? (
-                  <span className="mt-2 text-slate-400">
+                  <span className='mt-2 text-slate-400'>
                     Pencarian tidak ditemukan
                   </span>
                 ) : (
-                  <span className="mt-2 text-slate-400">Tidak ada catatan</span>
+                  <span className='mt-2 text-slate-400'>Tidak ada catatan</span>
                 )
               ) : (
-                ""
+                ''
               )}
             </div>
 
             {/* arsip */}
-            <div className="flex flex-col mt-4">
-              <h1 className="text-lg font-bold">Arsip</h1>
+            <div className='flex flex-col mt-4'>
+              <h1 className='text-lg font-bold'>Arsip</h1>
                 <NoteList
                   notes={this.getListArsip()}
                   deleteNote={this.deleteNote}
@@ -168,14 +168,14 @@ class NotesApp extends React.Component {
                 />
                 {this.getListArsip().length === 0 ? (
                 this.state.search.length ? (
-                  <span className="mt-2 text-slate-400">
+                  <span className='mt-2 text-slate-400'>
                     Pencarian tidak ditemukan
                   </span>
                 ) : (
-                  <span className="mt-2 text-slate-400">Tidak ada arsip</span>
+                  <span className='mt-2 text-slate-400'>Tidak ada arsip</span>
                 )
               ) : (
-                ""
+                ''
               )}
             </div>
           </div>
@@ -193,5 +193,5 @@ class NotesApp extends React.Component {
   }
 }
 
-const root = createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById('root'));
 root.render(<NotesApp />);
