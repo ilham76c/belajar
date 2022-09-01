@@ -23,10 +23,10 @@ function SearchBar({ searchEventHandler, filterEventHandler }) {
         onChange={filterEventHandler}
       >
         <option id="1" value="nofilter">
-          No Filter
+          All
         </option>
         <option id="2" value="aktif">
-          Aktif
+          Catatan
         </option>
         <option id="3" value="arsip">
           Arsip

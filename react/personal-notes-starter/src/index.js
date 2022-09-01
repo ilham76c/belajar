@@ -139,28 +139,43 @@ class NotesApp extends React.Component {
             {/* catatan */}
             <div className="flex flex-col mt-4">
               <h1 className="text-lg font-bold">Catatan</h1>
-              {this.state.notes.some((obj) => obj.archived === false) ? (
-                <NoteList
-                  notes={this.getListNotes()}
-                  deleteNote={this.deleteNote}
-                  arsipNote={this.arsipNote}
-                />
+
+              <NoteList
+                notes={this.getListNotes()}
+                deleteNote={this.deleteNote}
+                arsipNote={this.arsipNote}
+              />
+              {this.getListNotes().length === 0 ? (
+                this.state.search.length ? (
+                  <span className="mt-2 text-slate-400">
+                    Pencarian tidak ditemukan
+                  </span>
+                ) : (
+                  <span className="mt-2 text-slate-400">Tidak ada catatan</span>
+                )
               ) : (
-                <span className="mt-2 text-slate-400">Tidak ada catatan</span>
+                ""
               )}
             </div>
 
             {/* arsip */}
             <div className="flex flex-col mt-4">
               <h1 className="text-lg font-bold">Arsip</h1>
-              {this.state.notes.some((obj) => obj.archived === true) ? (
                 <NoteList
                   notes={this.getListArsip()}
                   deleteNote={this.deleteNote}
                   arsipNote={this.arsipNote}
                 />
+                {this.getListArsip().length === 0 ? (
+                this.state.search.length ? (
+                  <span className="mt-2 text-slate-400">
+                    Pencarian tidak ditemukan
+                  </span>
+                ) : (
+                  <span className="mt-2 text-slate-400">Tidak ada arsip</span>
+                )
               ) : (
-                <span className="mt-2 text-slate-400">Tidak ada arsip</span>
+                ""
               )}
             </div>
           </div>
