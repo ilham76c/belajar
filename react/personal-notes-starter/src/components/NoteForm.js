@@ -8,7 +8,6 @@ class ContactInput extends React.Component {
     this.state = {
       id: "",
       title: "",
-      createdAt: "",
       body: "",
       archived: false,
     };
@@ -36,11 +35,13 @@ class ContactInput extends React.Component {
 
   onSubmitEventHandler(e) {
     e.preventDefault();
-    this.props.addNote(this.state);
+    this.props.addNote({
+      ...this.state,
+      createdAt: new Date()
+    });
     this.setState({
       id: +new Date(),
       title: "",
-      createdAt: new Date(),
       body: "",
     });
   }
