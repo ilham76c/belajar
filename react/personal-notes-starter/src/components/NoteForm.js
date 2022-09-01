@@ -6,7 +6,6 @@ class ContactInput extends React.Component {
 
     // inisialisasi state
     this.state = {
-      id: "",
       title: "",
       body: "",
       archived: false,
@@ -37,10 +36,10 @@ class ContactInput extends React.Component {
     e.preventDefault();
     this.props.addNote({
       ...this.state,
+      id: +new Date(),
       createdAt: new Date()
     });
     this.setState({
-      id: +new Date(),
       title: "",
       body: "",
     });

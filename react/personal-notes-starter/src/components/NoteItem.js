@@ -5,7 +5,7 @@ function NoteItem({
   title,
   body,
   createdAt,
-  arsip,
+  archived,
   deleteNote,
   arsipNote,
 }) {
@@ -30,7 +30,7 @@ function NoteItem({
           className="flex-1 rounded-br border border-gray-100 py-1 cursor-pointer text-yellow-500"
           onClick={() => arsipNote(id)}
         >
-          {arsip ? "Pindahkan" : "Arsipkan"}
+          {archived ? "Pindahkan" : "Arsipkan"}
         </button>
       </div>
     </div>
