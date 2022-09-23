@@ -1,0 +1,14 @@
+Pengenalan RESTful API
+- REST singakatan dari REpresentational State Tranfer
+- REST dikenalkan tahun 2000 oleh Roy Fielding dalam disertasinya
+- RESTful API merupakan salah satu implementasi API yang memanfaatkan HTTP sebagai protokol komunikasinya
+- Walaupun SOAP juga berjalan diatas HTTP, namun RESTful API sangat sederhana dibanding SOAP 
+- RESTful API sangat mudah digunakan, dan bisa diadaptasi di semua bahasa pemrograman secara mudah
+- Saat ini RESTful API sudah menjadi standard API yang banyak digunakan ketika kita membuat sistem yang butuh menyediakan API untuk pihak lain
+
+
+Kenapa RESTful API? 
+- Menggunakan HTTP sebagai protokol komunikasi, dimana sudah sangat populer saat ini dengan banyaknya pengguna internet
+- Pembuatan RESTful API sangat mudah karena seperti membuat web pada umumnya 
+- Mudah digunakan oleh client baik itu berupa aplikasi web ataupun aplikasi non web seperti aplikasi desktop atau aplikasi mobile
+- Ringan dan mudah dimengerti oleh manusia
