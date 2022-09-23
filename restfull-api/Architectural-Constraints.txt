@@ -1,0 +1,55 @@
+Architectural Constraints
+- REST (REpresentational State Tranfer) merupakan architecture pattern yang dikenalkan oleh Roy Fielding tahun 2000
+- REST di desain berjalan menggunakan HTTP, dan sering digunakan sebagai Web Services
+- Roy Fielding memperkenalkan beberapa design principal ketika kita akan membuat REST
+
+Berikut adalah beberapa design principal agar web services benar-benar sesuai dengan RESTful API
+- Client Server
+- Stateless
+- Cacheable
+- Uniform Interface
+- Layered system
+- Code on demand
+
+
+Client server
+- Design principal pertama adalah Client Server
+- RESTful API haruslah memisahkan antara kompleksitas data internal dengan yang akan di expose ke client
+- Oleh karena itu, RESTful API haruslah menggunakan arsitektur Client Server, sehingga Client tidak perlu tahu kompleksitas logic yang terjadi di server
+
+Stateless
+- Interaksi antar client dan server dalam RESTful haruslah stateless
+- Artinya tiap interaksi harus tidak bergantung dengan interaksi sebelumnya atau setelahnya, dan setiap interaksi harus mengirim seluruh informasi yang dibutuhkan
+- Ini mirip dengan stateless di protocol HTTP
+- Salah satu kegunaan stateless adalah mudah untuk di scaling, baik itu jumlah client juga server, karena server atau client tidak perlu peduli harus berinteraksi dengan client atau server manapun
+
+Cacheable
+- Untuk menghemat komunikasi, RESTful API bisa mengimplementasikan Cache
+- Mirip seperti Cache di HTTP, di client pada RESTful API juga bisa melakukan cache data di local, sehingga tidak perlu selalu meminta data terbaru dari Server
+- Cara implementasi Cache di RESTful API tidak sesederhana seperti di HTTP, nanti akan kita bahas di materi tersendiri tentang Cache
+
+Uniform Interface
+- Salah satu yang membedakan RESTful API dengan teknologi RPC lain adalah, Penggunaan antarmuka komunikasi yang seragam untuk semua pihak (client & server teknologi apapun)
+- Hal ini dikarenakan salah satunya kerena RESTful API menggunakan teknologi HTTP yang sudah standard sehingga seragam di semua teknologi atau bahasa pemrograman
+- Data yang di expose di RESTful API juga haruslah general, tidak melihatkan kompleksitas internal dari pemilik data, hal ini membuat perubahan apapun yang terjadi pada internal aplikasi, tidak akan berpengaruh dengan data yang di expose di API
+
+
+Layered System 
+- Untuk melakukan improvement pada sistem RESTful API, sistem RESTful API juga dapat menggunakan Layered System
+- Layered System menjadikan sistem bisa disusun sesuai dengan datanya, dan agar kompleksitas pada RESTful API tidak harus diketahui oleh client
+- Layer juga bisa digunakan untuk melakukan enkapsulasi aplikasi lama yang tidak memiliki kemampuan RESTful API, atau menjadi load balancer untuk RESTful API yang lain
+
+
+Code on Demand 
+- RESTful API juga juga diperbolehkan mengembalikan script yang bisa dieksekusi oleh client jika diperlukan 
+- Hal ini bisa mempermudah dari sisi Client sehingga tidak perlu mengimplementasikan kode terlalu banyak, karena kode bisa dikirim dari server
+- Misal Server mengembalikan kode Javascript yang akan dieksekusi oleh Client Web, atau mengembalikan Layout XML untuk di render oleh aplikasi Android
+- Code on Demand adalah design principal yang tidak wajib diimplementasikan ketika kita membuat RESTful API 
+
+
+Perhatian 
+- Design principal adalah panduan jika kita ingin membuat RESTful API yang baik
+- Namun pada kenyatannya, kadang kita melakukan hal-hal yang tidak sesuai dengan design principal
+- Walaupun bisa dibilang RESTful API, namun kemungkinan RESTful API kita tidak bisa dibilang "truly RESTful API" atau tidak tidak bagus
+
+
