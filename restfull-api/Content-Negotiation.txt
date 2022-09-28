@@ -1,0 +1,60 @@
+Content Negotiation
+- Saat kita membuat web menggunakan HTTP, biasanya content atau Body akan menggunakan HTML
+- Pada RESTful API pun, untuk berkomunikasi antara Client dan Server, biasanya menggunakan Body
+- Ada banyak sekali Body Content yang bisa digunakan di RESTful API, seperti JSON (Javascript Object Notation), XML, dan lain-lain.
+- Namun yang paling populer dan banyak digunakan saat ini adalah JSON
+
+
+HTTP Headers 
+- Sama seperti pada HTTP, untuk melakukan content negotiation, pada RESTful API akan menggunakan standard HTTP Header yaitu Accept dan Content-Type
+- Accept digunakan untuk memberi tahu Server, tentang tipe data yang diterima oleh Client
+- Content-Type digunakan untuk memberi tahu Server, tipe data apa yang dikirim oleh Client
+
+
+JSON
+- JSON singkatan dari Javascript Object Notation
+- JSON adalah tipe data object pada Javascript
+
+
+Kenapa Menggunakan JSON
+- JSON sangat populer digunakan dalam pembuatan RESTful API saat ini
+- Data JSON sangat mudah dibuat dan juga dimengerti oleh manusia
+- JSON tidak hanya mudah dibuat dalam Javascript, namun hampir di semua bahasa pemrograman
+- Data dalam bentuk JSON sangat ringan, sehingga cocok untuk digunakan sebagai data komunikasi antara Client dan Server
+
+
+Konsisten Menggunakan JSON
+- Tidak seperti SOAP yang format request dan response nya sudah ditentukan, pada RESTful API tidak ada standar baku dalam membuat request dan response
+- Menggunakan JSON jika tidak dibuat dengan baik bisa terlalu liar, karena bisa dibuat sesuka kita
+- Disarankan untuk membuat standard request dan response agar tidak membingungkan ketika menggunakan RESTful API yang kita buat
+- Response JSON yang dinamis akan sangat menyulitkan client terutama yang menggunakan bahasa pemrograman static typed
+
+
+Contoh standard JSON (1)
+{
+  "took": 123,
+  "status": "OK",
+  "data": {
+    "name": "ilham",
+    "address": "Madura"
+  },
+  "errors": null
+}
+
+Contoh standard JSON (2)
+{
+  "took": 87,
+  "status": "ValidationError",
+  "data": null,
+  "errors": {
+    "name": "is not blank",
+    "address": "is not blank"
+  }
+}
+
+
+Response Status
+- Selalu gunakan response status code yang sesuai dengan Standarisasi HTTP
+- Misal jika sukses, gunakan Response Status 2xx
+- Jika data yang dikirim oleh client tidak valid, gunakan 4xx
+- Jika terjadi masalah di Server, gunakan 5xx
