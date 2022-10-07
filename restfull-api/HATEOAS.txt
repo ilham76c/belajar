@@ -1,0 +1,35 @@
+HATEOAS
+- HATEOAS singkatan dari Hypermedia as the Engine of Application State 
+- Hypermedia artinya content yang memiliki link menuju resource yang ada 
+
+HATEOAS memberikan informasi relasi atau action yang dapat dilakukan dari sebuah data
+
+Contoh HATEOAS (1)
+[
+  {
+    "id": 1,
+    "name": "ilham",
+    "email": "ilham@email.com",
+    "_links": {
+      "self": "/customers/1"
+    }
+  }
+]
+
+Contoh HATEOAS (2)
+{
+  "account": "112545",
+  "balance": 5000000,
+  "links": {
+    "deposit": "/accounts/112545/deposit",
+    "withdraw": "/accounts/112545/withdraw",
+    "tranfer": "/accounts/112545/tranfer",
+    "close": "/accounts/112545/close",
+  }
+}
+
+
+Keuntungan Menggunakan HATEOAS
+- Biasanya URL API pada RESTful API sudah di hardcode di client
+- Dengan menggunakan HATEOAS, client bisa secara dinamis mendapatkan URL lokasi resource dari response data server
+
