@@ -1,0 +1,41 @@
+Kesalahan Ketika Membuat RESTful API
+- Selalu membuat CRUD API untuk table di database
+- Membuat response data sama dengan table di database
+- Membuat API terlebih dahulu, baru mengerjakan Web atau Mobile menggunakan API yang sudah dibuat
+- Mengembalikan data selengkap-lengkapnya di API
+- Membuat API yang tidak dibutuhkan oleh Client
+
+
+Tahapan Membuat RESTful API
+[gambar]
+
+
+Contoh: RESTful API Shopping Cart: Bussiness Flow
+1. Customer menambahkan barang ke keranjang, bisa lebih dari satu barang
+2. Customer membuka halaman keranjang, bisa mengubah data quantity barang
+3. Customer memasukkan alamat pengiriman 
+4, Customer menekan tombol order untuk membuat order
+
+
+Contoh: RESTful API Shopping Cart: Screen
+[gambar]
+
+
+Contoh: RESTful API Shopping Cart: API Doc 
+Product Detail:
+- GET /products/{productId}
+- POST /carts
+
+Shopping Cart:
+- GET /carts
+- PATCH /carts/products
+- PATCH /carts/products/{productId}
+
+Shipping Address:
+- GET /addresses
+- POST /addresses
+- PUT /carts/addresses
+- POST /orders
+
+Order Detail:
+- GET /orders/{orderId}
