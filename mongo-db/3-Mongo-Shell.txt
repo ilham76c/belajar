@@ -1,0 +1,18 @@
+Mongo Shell
+- MongoDB menyediakan aplikasi mongo client berupa command line interface untuk terkoneksi ke MongoDB Server dengan nama Mongo Shell
+- Mongo Shell sangat bermanfaat saat kita tidak harus terkoneksi ke mongo server tanpa GUI
+- Mongo Shell menggunakan bahasa pemrograman JavaScript
+
+
+Menggunakan Mongo Shell
+command: mongo --host localhost --port 27017
+
+
+MongoDB GUI Client
+Jika kita terbiasa menggunakan GUI, ada beberapa aplikasi yang bisa kita gunakan sebagai mongo client, seperti:
+  - MongoDB Compass: https://www.mongodb.com/products/compass 
+  - JetBrains DataGrip: https://www.jetbrains.com/datagrip/
+  - MongoDB for Visual Studio Code: https://marketplace.visualstudio.com/items?itemName=mongodb-vscode
+  -Robo 3T: https://robomongo.org/
+
+
