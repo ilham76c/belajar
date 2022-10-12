@@ -5,7 +5,7 @@ Mongo Shell
 
 
 Menggunakan Mongo Shell
-command: mongo --host localhost --port 27017
+command: mongosh --host localhost --port 27017
 
 
 MongoDB GUI Client
