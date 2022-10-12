@@ -1,0 +1,24 @@
+Database
+- Database adalah tempat menyimpan collection
+- Semua collection harus disimpan di database
+- Biasanya database digunakan untuk memisahkan data secara logical per aplikasi, artinya biasanya satu aplikasi akan memiliki satu database 
+- Jarang sekali kita menggunakan satu database untuk beberapa aplikasi
+
+
+Membuat Database
+- Kita tidak perlu secara eksplisit membuat database
+- MongoDB akan secara otomatis membuatkan database sesuai dengan nama database yang kita pilih
+- Untuk memilih nama database, kita bisa menggunakan perintah "use" diikuti nama database
+
+
+Contoh command:
+$ use belajar // memilih database belajar
+$ show databases // melihat suluruh database yang exist
+
+
+Database Methods 
+db.dropDatabase()   // Menghapus database
+db.getName()        // Mengambil nama database
+db.hostInfo()       // Mengambil informasi host tempat mongodb
+db.version()        // Mengambil versi database
+db.stats()          // Mengambil statistik penggunaan database
