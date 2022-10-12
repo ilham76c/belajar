@@ -1,0 +1,27 @@
+Pengenalan MongoDB
+- MongoDB merupakan free dan opensource database management system
+- MongoDB merupakan database management system berbasis document
+- Dikembangkan oleh perusahaan bernama 10gen tahun 2007
+- Dirilis ke public tahun 2009
+- Saat ini perusahaan 10gen sudah berganti nama menjadi MongoDB Inc
+- MongoDB hampir mendukung semua bahasa pemrograman sebagai client-nya
+- MongoDB tidak menggunakan SQL, namun menggunakan JavaScript sebagai bahasa utama untuk manipulasi document
+- https://github.com/mongodb/mongo 
+
+
+Apa itu Document Oriented Database 
+- Document oriented database merupakan sistem database yang digunakan untuk memanipulasi data dalam bentuk document (semi structured data)
+- Biasanya document disimpan dalam bentuk JSON atau XML
+- Document oriented database biasanya bertolak belakang dengan relational database
+- Relational database biasanya menyimpan data dalam bentuk table, dan menyimpan relasinya di table lain
+- Document oriented database biasanya menyimpan data dalam bentuk JSON atau XML, dan menyimpan relasinya sebagai embedded object di dalam document yang sama
+
+
+Istilah Relational DB vs Document DB
+Relational DB       Document DB (MongoDB)
+- Database          - Database
+- table             - Collection
+- Column            - Field
+- Row, Record       - Document (JSON, XML, dan lain-lain)
+- Join table        - Embedded Document, Reference
+- SQL               - JavaScript (MongoDB)
