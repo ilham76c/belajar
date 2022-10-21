@@ -1,0 +1,10 @@
+Docker Architecture
+- Docker menggunakan arsitektur Client-Server
+- Docker client berkomunikasi dengan Docker daemon (Server)
+- Saat kita menginstall Docker, biasanya di dalamnya sudah terdapat Docker Client dan Docker Daemon 
+- Docker Client dan Docker Daemon bisa berjalan di satu sistem yang sama 
+- Docker Client dan Docker Daemon berkomunikasi menggunakan REST aplikasi
+
+
+Diagram Docker Architecture
+[gambar]
