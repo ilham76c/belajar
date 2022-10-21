@@ -1,0 +1,18 @@
+Sebelum Belajar
+- Mengerti tentang system operasi
+- Mengerti cara menginstall aplikasi 
+- Mengerti cara menggunakan perintah di terminal atau command line
+- Mengerti tentang Virtual Machine
+
+
+Agenda
+- Pengenalan Container
+- Pengenalan Docker
+- Menginstall Docker
+- Arsitektur Docker
+- Docker Image
+- Docker Registry
+- Docker Container
+- Docker Volume
+- Docker Network
+- DAn lain-lain
