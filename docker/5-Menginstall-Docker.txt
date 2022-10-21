@@ -1,0 +1,39 @@
+Menginstall Docker
+- Docker bisa di install hampir di semua sistem operasi
+- Untuk menginstall di Windows dan Mac, kita bisa menggunakan Docker Desktop
+- https://docs.docker.com/get-docker/
+- Untuk Linux, kita bisa install dari repository sesuai distro linux masing-masing
+- https://docs.docker.com/engine/install/
+
+
+Mengecek Docker
+- Untuk mengecek apakah Docker Daemon sudah berjalan, kita bisa gunakan perintah "docker version"
+- Perintah "docker version" akan menampilkan informasi seperti di bawah ini
+Client:
+ Version:           20.10.17
+ API version:       1.41
+ Go version:        go1.16.15
+ Git commit:        100c70180f
+ Built:             Thu Sep 22 06:21:41 2022
+ OS/Arch:           linux/amd64
+ Context:           default
+ Experimental:      true
+
+Server:
+ Engine:
+  Version:          20.10.17
+  API version:      1.41 (minimum version 1.12)
+  Go version:       go1.16.15
+  Git commit:       a89b842
+  Built:            Thu Sep 22 06:22:13 2022
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v1.6.6
+  GitCommit:        10c12954828e7c7c9b6e0ea9b0c02b01407d3ae1
+ runc:
+  Version:          1.1.2
+  GitCommit:        
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
