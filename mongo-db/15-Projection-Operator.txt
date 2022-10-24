@@ -1,0 +1,91 @@
+Projection
+- Pada function find, terdapat parameter kedua setelah query yaitu projection 
+- Projection adalah memilih field mana yang ingin kita ambil atau hide
+- db.<collection>.find(query, projection)
+
+
+Projection Operator
+$           -> Limit array hanya mengembalikan data pertama yang match dengan array operator
+$elemMatch  -> Limit array hanya mengembalikan data pertama yang match dengan kondisi query
+$meta       -> Mengembalikan informasi metadata yang didapat dari setiap matching document 
+$slide      -> Mengontrol jumlah data yang ditampilkan pada array
+
+
+Kode Program
+// 1 include
+// 0 exlude
+
+include atau exlude: kita hanya boleh menggunakan salah satunya dan tidak boleh keduanya
+
+// select _id, name, category from products
+db.products.find({}, {
+    name: 1 /* 1 include */,
+    category: 1
+});
+
+// select _id, name, category, price from products
+db.products.find({}, {
+    tags: 0 /* 0 exlude */
+});
+
+
+// select _id, name, category, price, tags[first] from products where tags in ("samsung", "logitech")
+db.products.find({
+    tags: {
+        $elemMatch: {
+            $in: ["samsung", "logitech"]
+        }
+    }
+}, {
+    name: 1,
+    category: 1,
+    price: 1,
+    "tags.$": 1
+});
+
+// field ada jika sesuai kondisi
+// select _id, name, category, price, tags(in ("samsung", "logitech")) from products
+db.products.find({}, {
+    name: 1,
+    category: 1,
+    price: 1,
+    tags: {
+        $elemMatch: {
+            $in: ["samsung", "logitech"]
+        }
+    }
+})
+
+// sama seperti mengukur text similarity pada web pencarian
+// select *, score from products where $search like "monitor"
+db.products.find({
+    $text: {
+        $search: "monitor"
+    }
+},{
+    score: {
+        $meta: "textScore"
+    }
+})
+
+// mengambil data pada array tags berdasarkan index
+// select _id, name, price, category, tags[0,2] from products
+db.products.find({}, {
+    tags: {
+        $slice: 2
+    }
+});
+
+// select _id, name, price, category, tags[last 2] from products
+db.products.find({}, {
+    tags: {
+        $slice: -2
+    }
+});
+
+// select _id, name, price, category, tags[from, limit] from products
+db.products.find({}, {
+    tags: {
+        $slice: [1, 1]
+    }
+});
