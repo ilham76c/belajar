@@ -1,0 +1,122 @@
+Schema Validation
+- Pada relational database, biasanya kita menambahkan constraint terhadap data yang ada di tabel 
+- Misal, maksimal karakter, enum string, not null, dan lain-lain
+- Di MongoDB, fitur untuk validasi data lebih canggih dibanding constraint di relational database
+- MongoDB mendukung Schema Validation menggunakan JSON Schema
+
+
+JSON Schema
+- JSON Schema adalah standar resmi untuk memvalidasi data JSON
+- Dengan menggunakan JSON Schema, kita bisa memberi batasan data JSON apa yang valid sehingga bisa dimasukkan ke dalam collection
+- http://json-schema.org/
+
+
+Kode Program
+
+validationAction: 
+  - error : data ditolak jika tidak sesuai dengan schema
+  - warnig: data diterima tapi akan ada warning
+
+// Create category collection with validator
+db.createCollection("merchants", {
+    validationAction: "error",
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["name", "balance", "type", "address"] /* mandatory field */,
+            properties: {
+                name: {
+                    bsonType: "string",
+                    description: "Must be a string"
+                },
+                balance: {
+                    bsonType: "long",
+                    description: "Must be a long"
+                },
+                type: {
+                    enum: ["PREMIUM", "REGULAR"],
+                    description: "Can only be one of enum values"
+                },
+                address: {
+                    bsonType: "object",
+                    required: ["street", "city"],
+                    properties: {
+                        street: {
+                            bsonType: "string",
+                            description: "Must be a string"
+                        },
+                        city: {
+                            bsonType: "string",
+                            description: "Must be a string"
+                        },
+                        country: {
+                            bsonType: "string",
+                            description: "Must be a string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+})
+
+// Insert valid document
+db.merchants.insertOne({
+    _id: "toko1",
+    name: "Toko Satu",
+    balance: new NumberLong(1000000),
+    type: "PREMIUM",
+    address: {
+        street: "Jalan Raya Belum Jadi",
+        city: "Jakarta",
+        country: "Indonesia"
+    }
+})
+
+// Inser Invalid document: Name is blank
+db.merchants.insertOne({
+    _id: "toko2",
+    balance: new NumberLong(1000000),
+    type: "PREMIUM",
+    address: {
+        street: "Jalan Raya Belum Jadi",
+        city: "Jakarta",
+        country: "Indonesia"
+    }
+})
+
+// Inser Invalid document: Address City is blank
+db.merchants.insertOne({
+    _id: "toko2",
+    name: "Toko Dua",
+    balance: new NumberLong(1000000),
+    type: "PREMIUM",
+    address: {
+        street: "Jalan Raya Belum Jadi",
+        country: "Indonesia"
+    }
+})
+
+// Add validator to customers collection
+db.runCommand({
+    collMod: "customers",
+    validationAction: "error",
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["full_name"],
+            properties: {
+                full_name: {
+                    bsonType: "string",
+                    description: "Must be a string"
+                }
+            }
+        }
+    }
+})
+
+// insert invalid customer data
+db.customers.insertOne({
+  _id: "salah",
+  name: "salah"
+})
