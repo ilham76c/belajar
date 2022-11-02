@@ -1,0 +1,97 @@
+Indexes
+- Index adalah fitur di MongoDB untuk mengefisienkan proses query. Tanpa index, MongoDB harus melakukan proses query dengan cara collection scan (mencari keseluruhan data dari awal sampai akhir)
+- Jika terdapat index pada collection MongoDB, MongoDB bisa menggunakan index untuk mendapatkan data, tanpa harus melakukan pencarian ke seluruh document
+- Index adalah struktur data khusus yang menyimpan data dalam struktur yang mudah untuk dicari
+- Index menyimpan spesifik field, lalu mengurutkan data field tersebut. Hal ini tidak hanya mempermudah ketika proses pencarian, namun mempermudah ketika kita butuh melakukan pencarian dalam bentuk range document seperti paging
+- Sacara dasar, Index di MongoDB, cara kerjanya sama seperti Index di Relational DB
+
+
+Create Index Function
+db.<collection>.createIndex()   -> Membuat index di collection
+db.<collection>.getIndexes()    -> Melihat semua index di collection
+db.<collection>.dropIndex()     -> Menghapus index di collection
+
+
+Single Field Index
+- Secara default, field "_id" di MongoDB sudah di index secara otomatis, jadi kita tidak perlu membuat index lagi secara manual untuk field "_id"
+- MongoDB mendukung penuh pembuatan index di semua field yang ada di document. Dengan begitu, ini bisa mempercepat proses query di MongoDB untuk query terhadap field tersebut
+
+
+Compound Indexes
+- Jika kita butuh melakukan query terhadap lebih dari satu field, kita juga bisa membuat index terhadap lebih dari satu field, atau disebut Compound Index
+- MongoDB membatasi pembuatan maksimal field yang bisa dibuat di compound index adalah 32 field
+
+
+Indexing Strategy
+- Buat index untuk mendukung performa query
+    * Gunakan single index, jika kita hanya melakukan query terhadap satu field saja 
+    * Gunakan compound index, jika kita sering melakukan query ke field pertama, atau kombinasi field pertama dan kedua, atau pertama dan kedua dan seterusnya
+- Buat index untuk mengukur hasil query
+- Sering-seringlah menggunakan function explain() untuk mengecek apakah query kita sudah di optimize dengan index atau belum
+
+
+Syntax Single Field Index
+db.products.createIndex({
+  field: 1 // ascending
+})
+
+db.products.createIndex({
+  field: -1 // descending
+})
+
+Syntax Compound Index
+db.collection.createIndex({
+  field1: 1 // ascending,
+  field2: -1 // descending
+})
+
+
+Kode Program
+
+// Create index at category in products collection
+db.products.createIndex({
+    category: 1
+});
+
+// Get all indexes in products collection
+db.products.getIndexes();
+
+// Find products by category (will use index)
+db.products.find({
+    category: "food"
+});
+
+// Debugging query optimization
+db.products.find({
+    category: "food"
+}).explain();
+db.products.find({}).sort({
+    category:1
+}).explain();
+
+// Create index at price and tags in products collection
+db.products.createIndex({
+    stock: 1,
+    tags: 1
+});
+
+// Find products by stock and tags (will use index)
+db.products.find({
+    stock: 20,
+    tags: "popular"
+});
+
+// Debugging query optimization
+// kena index 
+db.products.find({
+    stock: 10
+}).explain();
+// kena index 
+db.products.find({
+    stock: 10,
+    tags: "popular"
+}).explain();
+// tidak kena index, karena harus mulai dari field pertama, jika loncat index maka tidak bisa
+db.products.find({
+    tags: "popular"
+}).explain();
