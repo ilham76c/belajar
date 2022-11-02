@@ -1,0 +1,60 @@
+Wildcard Indexes
+- MongoDB mendukung wildcard index, dimana ini digunakan untuk membuat index terhadap field yang belum diketahui atau field yang sering berubah-ubah
+- Misal contoh kita punya sebuah embedded document dengan tipe field customeFields, dimana isinya bisa bebas sesuai dengan data yang dimasukkan 
+- Agar bisa mendukung proses query yang cepat pada field tersebut, kita bisa menggunakan wildcard index
+
+
+Syntax Wildcard Index
+db.customers.createIndex({
+  "field.$**": 1
+})
+
+/* semakin banyak index yang kita buat maka akan semakin lambat proses perubahan data, entah itu insert atau update */
+/* kalau aplikasi lebih banyak melakukan query atau select data lebih baik ditambah index */
+/* kalau aplikasi lebih sering melakuakn insert atau update tidak perlu ditamah index agar performanya lebih baik */
+
+
+Kode Program
+// membuat wildcard index
+db.customers.createIndex({
+    "customFields.$**" : 1
+});
+
+// Insert many customers
+db.customers.insertMany([
+    {
+        _id: "budi",
+        full_name: "Budi",
+        customFields: {
+            hobby: "Gaming",
+            university: "Universitas Belum Ada"
+        }
+    },
+    {
+        _id: "joko",
+        full_name: "Joko",
+        customFields: {
+            ipk: 3.2,
+            university: "Universitas Belum Ada"
+        }
+    },
+    {
+        _id: "rudi",
+        full_name: "Rudi",
+        customFields: {
+            motherName: "Tini",
+            passion: "Enterpreneur"
+        }
+    }
+])
+
+// Debug wildcard index
+db.customers.find({
+    "customFields.passion": "Enterpreneur"
+}).explain();
+db.customers.find({
+    "customFields.ipk": 3.2
+}).explain();
+db.customers.find({
+    "customFields.hobby": "Gaming"
+}).explain();
