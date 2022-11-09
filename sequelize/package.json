@@ -4,15 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init:config": "sequelize-cli init:config --config sequelize-migration/config/config.json",
+    "init:migration": "sequelize-cli init:migrations --migrations-path sequelize-migration/migrate/migrations",
+    "init:model": "sequelize-cli init:models --models-path sequelize-migration/migrate/models",
+    "init:seeder": "sequelize-cli init:seeders --seeders-path sequelize-migration/migrate/seeders",
+    "model:create": "sequelize-cli model:create --name $NAME --attributes $ATTR --models-path sequelize-migration/migrate/models --migrations-path sequelize-migration/migrate/migrations",
+    "migrate": "sequelize-cli db:migrate --config sequelize-migration/config/config.json --migrations-path sequelize-migration/migrate/migrations",
+    "seed:create": "sequelize seed:create --name $NAME --config join/migrate/index.js --seeders-path join/migrate/mysql/seeders",
+    "seed": "sequelize db:seed:all --config join/migrate/index.js --seeders-path join/migrate/mysql/seeders"
   },
   "author": "Moh. Ilham Burhanuddin",
   "license": "MIT",
   "dependencies": {
-    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.6.5",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
     "sequelize-cli": "^6.4.1"
   }
 }
