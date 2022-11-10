@@ -1,0 +1,17 @@
+Prune
+- Saat kita menggunakan docker, kadang ada kalanya kita ingin membersihkan hal-hal yang sudah tidak digunakan lagi di docker, misal container yang sudah di stop, image yang tidak digunakan oleh container, atau volume yang tidak digunakan oleh container
+- Fitur untuk membersihkan secara otomatis di docker bernama Prune
+- Hampir semua perintah di docker mendukung Prune
+
+
+Perintah Prune
+- Untuk menghapus semua container yang sudah di stop  
+    $ docker container prune
+- Untuk menghapus semua image yang tidak digunakan oleh container
+    $ docker image prune
+- Untuk menghapus semua network yang tidak digunakan oleh container
+    $ docker network prune
+- Untuk menghapus semua volume tidak digunakan oleh container
+    $ docker volume prune
+- Atau kita bisa menggunakan satu perintah untuk menghapus container, network, dan image yang sudah tidak digunakan dengan menggunakan perintah
+    $ docker system prune
