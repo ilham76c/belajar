@@ -1,0 +1,29 @@
+Container Network
+- Setelah kita membuat network, kita bisa menambahkan container ke network
+- Container yang terdapat di dalam network yang sama bisa saling berkomunikasi (tergantung jenis driver network-nya)
+- Container bisa mengakses container lain dengan menyebutkan hostname dari container tersebut, yaitu nama container-nya
+
+
+Membuat Container dengan Network
+- Untuk menambahkan container ke network, kita bisa menambahkan perintah --network ketika membuat container, misal:
+    $ docker container create --name namacontainer --network namanetwork image:tergantung
+
+
+ME_CONFIG_MONGODB_URL="mongodb://password:username@namacontainer:portcontainer(tidak di expos)/"
+
+Kode Membuat Container dengan Network
+$ docker network create --driver bridge mongonetwork
+$ docker container create --name mongodb --network mongonetwork --env MONGO_INITDB_ROOT_USERNAME=ilham --env MONGO_INITDB_ROOT_PASSWORD=ilham mongo:latest
+$ sudo docker container start mongodb
+$ docker image pull mongo-express:latest
+$ docker container create --name mongoexpress --network mongonetwork --publish 8081:8081 --env ME_CONFIG_MONGODB_URL="mongodb://ilham:ilham@mongodb:27017/" mongo-express:latest
+
+
+Menghapus Container dari Network
+- Jika diperlukan, kita juga bisa menghapus container dari network dengan perintah:
+    $ docker network disconnect namanetwork namacontainer
+
+
+Menambahkan Container ke Network
+- Jika containernya sudah terlanjur dibuat, kita juga bisa menambahkan container yang sudah dibuat ke network dengan perintah:
+    $ docker network connect namanetwork namacontainer
