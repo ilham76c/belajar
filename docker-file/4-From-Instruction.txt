@@ -1,0 +1,16 @@
+From Instruction
+- Saat kita membuat Docker Image, biasanya perintah pertama adalah melakukan build stage dengan instruksi FROM
+- FROM digunakan untuk membuat build stage dari image yang kita tentukan
+- Biasanya, jarang sekali kita akan membuat Docker Image dari scratch (kosongan), biasanya kita akan membuat Docker Image dari Docker Image lain yang sudah ada
+- Untuk menggunakan FROM, kita bisa gunakan perintah
+    $ FROM image:version
+
+
+Contoh Dockerfile
+berada di folder "4-From-Instruction/Dockerfile"
+
+
+Perintah untuk Build 
+$ docker build -t namaimage folderdockerfile:tag(jika tidak ada defaultnya latest)
+$ docker build -t ilham76c/from 4-From-Instruction
+$ docker image ls
