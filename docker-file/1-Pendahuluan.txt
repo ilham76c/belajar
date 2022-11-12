@@ -1,0 +1,14 @@
+Sebelum Belajar
+- Docker Dasar
+
+
+Agenda 
+- Pengenalan Dockerfile
+- Dockerfile Format
+- From Instruction
+- Label Instruction
+- Expose Instruction
+- Environment Variable Instruction
+- Entrypoint Instruction
+- Volume Instruction
+- Dan lain-lain
