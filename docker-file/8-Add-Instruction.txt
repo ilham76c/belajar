@@ -1,0 +1,24 @@
+Add Instruction
+- ADD adalah instruksi yang dapat digunakan untuk menambahkan file dari source ke dalam folder destination di Docker Image
+- Perintah ADD bisa mendeteksi apakah sebuah file source merupakan file kompres seperti tar.gz, gzip, dan lain-lain. Jika mendeteksi file source adalah berupa file kompres, maka secara otomatis file tersebut akan di extract dalam folder destination
+- Perintah ADD juga bisa mendukung banyak penambahan file sekaligus
+- Penambahan banyak file sekaligus di instruksi ADD menggunakan Pattern di Go-Lang: https://pkg.go.dev/path/filepath#Match
+
+
+Add Instruction Format
+- Instruksi ADD memiliki format sebagai berikut:
+    $ ADD source destination
+    $ ADD world.txt hello #menambahkan file world.txt ke folder hello
+    $ ADD *.txt hello #menambah semua file .txt ke folder hello
+
+
+Contoh Dockerfile
+berada di folder "8-Add-Instruction"
+
+
+Build Dockerfile
+$ docker build -t namaimage folderdockerfile:tag(jika tidak ada tag, defaultnya latest)
+$ docker build -t ilham76c/add 8-Add-Instruction
+$ docker container create --name add ilham76c/add
+$ docker container start add
+$ docker container logs add
