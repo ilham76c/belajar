@@ -1,0 +1,149 @@
+Authorization
+- Authorization adalah proses yang dilakukan setelah proses authentication sukses
+- Authorization dilakukan untuk melakukan pengecekan apakah user memiliki hak akses untuk melakukan sebuah action
+- Hak akses di MongoDB disimpan dalam bentuk role
+
+
+Database Roles
+read      -> Bisa membaca data di semua collection yang bukan sistem collection
+readWrite -> Bisa membaca dan mengubah data di semua collection yang bukan sistem collection
+dbAdmin   -> Bisa melakukan kemampuan administrasi database
+userAdmin -> Mampu membuat user dan role
+dbOwner   -> Kombinasi readWrite, dbAdmin dan userAdmin
+
+
+All Database Roles
+readAnyDatabase       -> Seperti read role, tapi untuk semua database
+readWriteAnyDatabase  -> Seperti readWrite role, tapi untuk semua database
+userAdminAnyDatabase  -> Seperti userAdmin, tapi untuk semua database
+dbAdminAnyDatabase    -> Seperti dbAdmin, tapi untuk semua database
+
+
+Backup & Restore Roles
+backup  -> Kemampuan untuk melakukan backup database
+restore -> Kemampuan untuk melakukan restore databae
+
+
+Superuser Roles
+root  -> Bisa melakukan apapun
+
+
+Privileges
+- Role membatasi hak askes di level database
+- Kadang kita ingin membatasi di level collection
+- Untuk melakukan itu, kita bisa menggunakan privileges
+
+
+Role Function
+db.createRole() -> Membuat role baru
+db.getRoles()   -> Mendapatkan role
+db.deleteRole() -> Menghapus role
+db.updateRole() -> Mengubah role
+
+
+Syntax Role
+db.createRole({
+  role: "name",
+  privileges: [
+    {
+      resource: {
+        db: "database",
+        collection: "collection"
+      },
+      actions: ["action"]
+    }
+  ],
+  roles: [
+    {
+      role: "role",
+      db: "database"
+    }
+  ]
+})
+
+
+Kode Program
+// Use test database
+// use test;
+
+// create role
+db.createRole({
+    role: "find_and_insert",
+    privileges: [],
+    roles: [
+        {
+            role: "read",
+            db: "test"
+        }
+    ]
+});
+
+// Get all roles
+db.getRoles({ showPrivileges: true });
+
+// update role
+db.updateRole("find_and_insert", {
+    privileges: [
+        {
+            resource: {
+                db: "test",
+                collection: "products"
+            },
+            actions: [ "insert" ] /* hanya bisa melakukan insert di collection products */
+        }
+    ],
+    roles: [
+        {
+            role: "read" /* bisa melakukan read data di semua collection */,
+            db: "test"
+        }
+    ]
+});
+
+// Add use with role
+db.createUser({
+    user: "jos",
+    pwd: "jos", 
+    roles: [ "find_and_insert" ]
+});
+
+// Connect to mongo server
+// mongo --username jos --password jos --authenticationDatabase test
+
+// Insert product [SUCCESS]
+db.products.insert({
+    "_id" : 10,
+    "name" : "iPad Pro 11 2020",
+    "price" : NumberLong(20000000),
+    "category" : "tablet",
+    "tags" : [
+        "apple",
+        "ipad",
+        "tablet",
+    ],
+    "lastModifiedDate" : new Date(),
+    "stock" : 10,
+    "ratings" : [
+        100
+    ]
+});
+
+// Delete product [FAILED]
+db.products.deleteOne({
+    _id: 10
+});
+
+// Update product [FAILED]
+db.products.updateOne({
+    _id: 10
+},{
+    $set: {
+        category: "food"
+    }
+});
+
+// Insert Customer [FAILED]
+db.customers.insertOne({
+    _id: "kurniawan",
+    name: "Eko Kurniawan Khannedy"
+});

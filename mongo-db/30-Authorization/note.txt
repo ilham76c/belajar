@@ -1,0 +1,17 @@
+$ docker container exec -it mongo-unsecure /bin/sh
+$ mongo --username ilham --password ilham
+$ use test
+$ db.createRole...
+$ db.getRoles({ showPrivileges: true }); #roles adalah gabungan dari beberapa privileges, gunakan property showPrivileges untuk menampilkan privileges
+$ db.updateRole...
+$ db.createUser({
+    user: "jos",
+    pwd: "jos", 
+    roles: [ "find_and_insert" ]
+  })
+$ mongo --username jos --password jos --authenticationDatabase test
+$ use test
+$ db.merchants.insert({ _id: 1, message: "merchant 1" }) #result akan error karena role yang digunakan oleh user jos hanya di set untuk mengakses collection products saja
+$ db.products.insert... #query akan berhasil
+$ db.products.deleteOne... #result akan error karena role-nya hanya mengizinkan user untuk melakukan insert data, karena privileges yang diberikan hanya ["insert"]
+$ db.products.updateOne... #result juga akan error karena role-nya hanya mengizinkan user untuk melakukan insert data, karena privileges yang diberikan hanya ["insert"]
