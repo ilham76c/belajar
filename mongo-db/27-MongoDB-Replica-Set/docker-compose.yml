@@ -29,3 +29,4 @@ services:
 networks: 
   mongo_replica_set:
     name: mongo_replica_set
+    driver: bridge
