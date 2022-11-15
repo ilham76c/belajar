@@ -1,0 +1,26 @@
+$ docker compose -f docker-compose.yml up -d
+$ docker container exec -it mongo-unsecure /bin/sh
+$ mongo
+$ use admin
+$ #run Kode Program createUser...
+$ docker compose -f docker-compose.yml stop
+$ docker compose -f docker-compose.yml up -d
+$ docker container exec -it mongo-unsecure /bin/sh
+$ mongo
+$ use test
+$ db.products.insert({ _id: 1, message: "ini adalah contoh" })
+# Result
+WriteCommandError({
+        "ok" : 0,
+        "errmsg" : "command insert requires authentication",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+})
+
+Result products insert akan error karena ketika login ke Mongo Shell kita tidak melakukan authentication.
+oleh karena itu, kita harus melakukan authentication saat login ke Mongo Shell dengan perintah:
+$ mongo --username ilham --password ilham
+$ use test
+$ db.products.insert({ _id: 1, message: "ini adalah contoh" })
+# Result
+WriteResult({ "nInserted" : 1 })
