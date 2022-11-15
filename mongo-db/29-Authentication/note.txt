@@ -1,0 +1,38 @@
+$ sudo docker container exec -it mongo-unsecure /bin/sh
+$ mongo --username ilham --password ilham
+$ use test
+$ db.createUser(
+    {
+        user: "contoh",
+        pwd: "contoh", 
+        roles: [
+            { role: "read", db: "test" }
+        ]
+    }
+  ) # menambahkan user di databae test
+$ db.getUsers()
+$ exit
+$ mongo --username contoh --password contoh --authenticationDatabase test
+$ db.products.insertOne({ _id: 2, message: "contoh 2" }) #result akan error karene role user contoh adalah read, jadi user contoh hanya bisa read data saja dan tidak bisa write data
+$ db.products.find() #result tampil dan tidak akan error
+
+
+Contoh 2
+$ exit
+$ mongo --username ilham --password ilham
+$ use test
+$ db.createUser(
+    {
+        user: "contoh2",
+        pwd: "contoh2", 
+        roles: [
+            { role: "readWrite", db: "test" }
+        ]
+    }
+ )
+$ db.getUsers()
+$ exit
+$ mongo --username contoh2 --password contoh2 --authenticationDatabase test
+$ use test
+$ db.products.insertOne({ _id: 2, message: "contoh 2" }) #query akan berhasil dan tidak error
+$ db.getUsers() #result akan error karena role user contoh2 hanya readWrite jadi hanya bisa read dan write data ke collection, dan tidak punya hak akses administrator
