@@ -1,0 +1,5 @@
+Dockerfile digunakan untuk membuat tiga container mongodb, container digunakan untuk mengetes fitur transaction pada MongoDB, tiap container terhubung melalui network mongo_replica_set yang menggunakan network driver brige.
+
+$ docker compose -f docker-compose.yml up -d
+$ docker container exec -it mongo1 /bin/bash
+$ mongo
