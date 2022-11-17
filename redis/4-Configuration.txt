@@ -1,0 +1,12 @@
+Configuration File
+- Saat menjalankan redis, redis tidak butuh file konfigurasi 
+- Namun, jika tidak menggunakan file konfigurasi, redis akan berjalan menggunakan konfigurasi default
+- Ada baiknya kita membuat file konfigurasi agar pengaturannya bisa diubah
+- https://github.com/redis/redis/blob/6.0/redis.Configuration
+
+
+Menjalankan Redis dengan Docker
+$ docker container logs redis #log redis tanpa konfigurasi
+$ docker compose -f docker-compose.yml down #shutdown redis container tanpa konfigurasi
+$ docker compose -f docker-compose.yml up -d #running redis dengan konfigurasi
+$ docker container logs redis #log redis dengan konfigurasi
