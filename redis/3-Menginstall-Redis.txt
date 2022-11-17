@@ -1,0 +1,26 @@
+Download Redis
+- https://redis.io/download
+- Redis adalah aplikasi yang dibuat menggunakan bahasa pemrograman C
+- Untuk menggunakan redis, kita harus melakukan kompilasi kode program Redis-nya
+- Disarankan menggunakan Docker untuk menjalankan redis, karena sampai saat ini belum tersedia binary file redis untuk Windows, Mac atau Linux
+
+
+Menginstal Redis via Docker
+- Docker Image: https://hub.docker/_/redis
+- Docker Compose: ./3-Menginstall-Redis/docker-compose.yml
+
+
+Redis Server vs Redis CLI
+- Saat kita menginstall Redis, ada 2 aplikasi yang terinstall, yaitu Redis Server dan Redis CLI
+- Redis Server adalah aplikasi server untuk Redis itu sendiri
+- Redis CLI adalah aplikasi command line untuk client, dimana digunakan untuk berkomunikasi dengan Redis Server
+
+
+Redis Server dan Redis CLI
+[gambar]
+
+
+Konek ke Redis Server via Redis CLI
+$ redis-cli -h <host> -p <port>
+$ redis-cli -h localhost
+$ ping #cek koneksi redis server
