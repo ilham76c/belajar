@@ -1,0 +1,25 @@
+Kapan Butuh Redis
+- Saat kita membuat aplikasi, tidak langsung wajib menggunakan Redis
+- Redis menggunakan memory sebagai media penyimpanan utama, otomatis harga memory lebih mahal dari disk
+- Untuk menggunakan Redis, kita perlu lihat kasusnya secara detail
+
+
+Ketika Database Utama Lambat
+[gambar]
+
+
+Ketika Aplikasi Lain Lambat
+[gambar]
+
+
+Ketika Ada Proses Berat di Aplikasi
+[gambar]
+
+
+Membuat Delayed Job
+[gambar]
+
+
+Dan masih banyak lainnya
+- Rata-rata redis digunakan untuk mempercepat aplikasi yang lambat
+- Dan juga redis biasa digunakan untuk caching, menyimpan data secara sementara
