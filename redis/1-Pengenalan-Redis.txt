@@ -1,0 +1,27 @@
+Sejarah Redis 
+- Redis singkatan dari Remote Dictionary Server adalah sistem basis data key-value berbasis memory
+- Pertama kali rilis tahun 2009 sebagai project open source 
+- https://redis.io/
+
+
+Apa Itu Key-Value Database?
+- Redis adalah sistem basis data berbasis key-value
+- Paradigma key-value adalah paradigma dimana data disimpan dalam bentuk pair (key-value)
+- Key mirip dengan primary key dari data, sedangkan value adalah isi dari datanya 
+
+
+Key-Value Database
+Key      Value (value harus string)
+K1   ->  "MY VALUE"
+K2   ->  "AAA,BBB"
+K3   ->  "OKEY"
+K4   ->  "[1,2,3]"
+
+
+Apa Itu In-Memory Database?
+- Redis menyimpan datanya di memory, namun kita bisa memintanya untuk menyimpan data secara reguler permanen di disk
+- Data di disk hanya dijadikan backup ketika redis berjalan ulang, selama redis berjalan, redis hanya akan melakukan manipulasi data ke memory
+
+
+In-Memory Database
+[gambar]
