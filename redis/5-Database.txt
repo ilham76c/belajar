@@ -1,0 +1,19 @@
+Database
+- Redis memiliki konsep database seperti pada relational database mysql atau postgre 
+- Di redis kita bisa membuat database dan menggunakan database-nya
+- Namun sedikit berbeda, jika di relational database kita bisa membuat database dengan nama seperti db_admin, users, test, dan lain-lain, di redis kita hanya bisa menggunakan angka sebagai database, seperti 0, 1, 2, 3, dan angka lainnya
+- Secara default database di redis adalah 0 (nol)
+- Kita bisa menggunakan database sejumlah maksimal sesuai dengan konfigurasi yang kita gunakan di file konfigurasi
+- Default maksimal database di redis adalah 16, bisa dilihat di file konfigurasi redis
+
+
+Operasi Database
+select database  -> Selecting database number
+
+
+Menjalankan Redis dengan Docker
+$ docker compose -f docker-compose.yml up -d
+$ docker container exec -it redis /bin/sh
+$ redis-cli -h localhost
+$ select 1 #pindah ke database 1
+$ select 16 #akan error karena index terakhir database adalah 15, dan index awal dimulai dari 0
