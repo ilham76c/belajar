@@ -1,0 +1,9 @@
+Flush 
+- Kadang kita butuh mengosongkan seluruh data di redis, misal ketika terjadi kesalahan kode sehingga menyebabkan data di redis salah
+- Menghapus data di redis satu per satu menggunakan operasi delete bukanlah hal yang bijak
+- Redis memiliki fitur untuk menghapus seluruh data di database redis, yaitu operasi flush
+
+
+Operasi Flush
+flushdb   -> Remove all keys from the current database
+flushall  -> Remove all key from all databases
