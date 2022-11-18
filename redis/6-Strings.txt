@@ -1,0 +1,22 @@
+Struktur Data Redis
+- Redis sebenarnya mendukung struktur data yang banyak, seperti String, List, Set, dan lain-lain
+- Namun yang paling sering digunakan adalah struktur data string
+
+
+Operasi Data String
+set key value    -> Set the string value of key
+get key          -> Get the value of key
+exists key       -> Determine if a key exists
+del key key2 ..  -> Delete a key
+append key value -> Append a value to a key
+keys pattern     -> Find all keys matching the given pattern
+
+
+Operasi Range Data String
+setrange key offset value   -> Overwrite part of a string at key starting at the specified offset
+getrange key start end      -> Get a substring of the string stored at a key
+
+
+Operasi Multiple Data String 
+mget key key2 key3 ..          -> Get the values of all the given keys
+mset key value key2 value2 ..  -> Set multiple keys to multiple value
