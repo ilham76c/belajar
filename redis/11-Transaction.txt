@@ -1,0 +1,22 @@
+Transaction 
+- Seperti pada database relational, redis juga mendukung transaction 
+- Proses transaction adalah proses dimana kita mengirimkan beberapa perintah, dan perintah tersebut akan dianggap sukses jika semua perintah sukses, jika gagal maka semua perintah harus dibatalkan
+
+
+Operasi Transaction
+multi   -> Mark the start of a transaction block
+exec    -> Execute all commands issued after MULTI 
+discard -> Discard all commands issued after MULTI
+
+
+Contoh 
+$ redis-cli -h localhost
+localhost:6379> multi
+localhost:6379> set name "ilham"
+localhost:6379> set country "indonesia"
+localhost:6379> exec //Transaction success
+
+localhost:6379> multi
+localhost:6379> set name "ilham"
+localhost:6379> set country //Error karena tidak ada value
+localhost:6379> exec //Transaction akan di abort karena ada query yang error
