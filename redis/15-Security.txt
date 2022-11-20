@@ -1,0 +1,44 @@
+Security
+- Secara default, ketika kita menyalakan redis server, redis server akan mendengarkan request dari semua network interface. Ini sangat berbahaya, karena bisa jadi redis terekspos secara public
+- Namun, redis punya second layer untuk pengecekan koneksi, yaitu mode protected, secara default mode protected-nya aktif, artinya walaupun redis bisa diakses dari manapun, tapi redis hanya mau menerima request dari 127.0.0.1 (localhost)
+
+
+Konfigurasi Network (redis.conf)
+################################## NETWORK #####################################
+
+# By default, if no "bind" configuration directive is specified, Redis listens
+# for connections from all available network interfaces on the host machine.
+# It is possible to listen to just one or multiple selected interfaces using
+# the "bind" configuration directive, followed by one or more IP addresses.
+#
+# Examples:
+#
+# bind 192.168.1.100 10.0.0.1
+# bind 127.0.0.1 ::1
+
+
+Konfigurasi Protected Mode (redis.conf)
+# By default protected mode is enabled. You should disable it only if
+# you are sure you want clients from other hosts to connect to Redis
+# even if no authentication is configured, nor a specific set of interfaces
+# are explicitly listed using the "bind" directive.
+protected-mode yes
+
+
+Contoh
+$ docker compose -f docker-compose.yml up -d
+$ docker container exec -it redis /bin/sh
+$ redis-cli -h localhost
+$ ping
+$ docker container exec -it redis-client /bin/sh
+$ redis-cli -h redis //koneksi akan ditolak karena lokasi redis server berbeda kontainer dengan redis client
+
+$ docker compose -f docker-compose.yml down
+$ //comment terlebih dulu baris ke-68 di file redis.conf yaitu "bind 127.0.0.1" menjadi "#bind 127.0.0.1", lalu jalankan lagi docker compose-nya
+$ docker compose -f docker-compose.yml up -d
+$ docker container exec -it redis /bin/sh
+$ redis-cli -h localhost
+$ ping
+$ docker container exec -it redis-client /bin/sh
+$ redis-cli -h redis //koneksi berhasil
+$ ping //DENIED, koneksi berhasil tapi kita tidak bisa melakukan query karena "protected-mode" bernilai "yes", agar bisa melakukan query kita bisa mengubahnya menjadi "no", akan tetapi akses akan menjadi public dan siapa saja bisa membuat koneksi, tentu sangat berbahaya. Selain mengubah nilai "protected-mode", kita bisa menambahkan authentication saat membuat koneksi ke redis, dan cara ini lebih aman daripada menonaktifkan "protected-mode".
