@@ -1,0 +1,12 @@
+Monitor
+- Kadang ada kasus dimana kita ingin men-debug aplikasi saat berkomunikasi dengan redis
+- Redis memiliki fitur monitor, yaitu fitur untuk memonitor semua request yang masuk ke redis server
+- Dengan fitur ini kita bisa mudah men-debug jika ternyata ada perintah yang salah yang dikirim oleh aplikasi kita ke redis server
+
+
+Operasi Monitor
+monitor  -> Listen for all requests received by the server in real time 
+
+
+Contoh
+Buka 2 redis cli, lalu ketik perintah "monitor" pada salah satu cli. Kemudian gunakan cli yang lain untuk melakuan query sepert "set name ilham", query tersebut akan tampil di cli yang menjalankan monitor.
