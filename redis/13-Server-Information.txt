@@ -1,0 +1,25 @@
+Server Information
+- Kadang kita butuh mendapatkan informasi dan statistik redis server
+- Seperti jumlah memory yang sudah terpakai, konfigurasi dan lain-lain 
+- Redis memiliki fitur ini, sehingga sangat mudah untuk mendapat informasi server dan memonitor-nya
+
+
+Operasi Server Information
+info     -> Get information and statistics about the server
+config   -> Get the value of a configuration parameter
+slowlog  -> Return top entries from the slowlog (mendapatkan informasi query yang lambat)
+
+
+Contoh
+$ info
+$ info //menampilkan seluruh info
+$ info keyspace //menampilkan info keyspace
+$ info memory //menampilkan info memory
+
+$ config help
+$ config get *
+$ config get databases
+
+$ slowlog help
+$ slowlog get //default-nya menampilkan 10 data slow query
+$ slowlog get 3 //menampilkan 3 data slow query
