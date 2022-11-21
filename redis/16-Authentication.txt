@@ -26,9 +26,12 @@ Contoh
 $ //tambah "user ilham on +@all >ilham" pada file redis.conf
 $ docker compose -f docker-compose.yml up -d
 $ docker container exec -it redis /bin/sh
-$ redis-cli -h localhost
+$ redis-cli -h localhost #atau bisa menggunakan "redis-cli -h localhost --user ilham --pass ilham" atau "redis-cli -h localhost --user ilham --askpass" untuk menyembunyikan password dan input password menggunakan STDIN
+$ auth ilham rahasia
 $ ping
+$ monitor
 
 $ docker container exec -it redis-client /bin/sh
 $ redis-cli -h redis
+$ auth ilham rahasia
 $ ping
