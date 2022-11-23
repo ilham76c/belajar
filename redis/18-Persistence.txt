@@ -1,0 +1,48 @@
+Persistence
+- Media penyimpanan utama redis adalah di memory
+- Namun kita bisa menyimpan data tersebut di disk jika kita mau
+- Namun perlu diingat bahwa proses penyimpanan data ke disk tidak realtime, dia dilakukan secara scheduler dengan konfigurasi tertentu
+- Jadi jangan jadikan redis sebagai media penyimpanan persistence, gunakan redis sebagai database untuk membantu database persistence lainnya
+
+
+Konfigurasi Persistence (cara otomatis)
+################################ SNAPSHOTTING  ################################
+#
+# Save the DB on disk:
+#
+#   save <seconds> <changes>
+#
+#   Will save the DB if both the given number of seconds and the given
+#   number of write operations against the DB occurred.
+#
+#   In the example below the behavior will be to save:
+#   after 900 sec (15 min) if at least 1 key changed
+#   after 300 sec (5 min) if at least 10 keys changed
+#   after 60 sec if at least 10000 keys changed
+#
+#   Note: you can disable saving completely by commenting out all "save" lines.
+#
+#   It is also possible to remove all the previously configured save
+#   points by adding a save directive with a single empty string argument
+#   like in the following example:
+#
+#   save ""
+
+
+Operasi Persistence
+save   -> Synchronously save the dataset to disk
+bgsave -> Asynchronously save the dataset to disk
+
+
+Contoh (cara manual)
+$ docker compose -f docker-compose.yml up -d
+$ docker container exec -it redis /bin/sh
+$ redis-cli -h localhost
+$ set name ilham
+$ set book blink
+$ save #simpan data ke disk
+$ docker container stop redis
+$ docker container start redis
+$ docker container exec -it redis /bin/sh
+$ redis-cli -h localhost
+$ keys * #data akan tetap ada meskipun container dimatikan dan dihidupkan ulang karena data sebelumnya telah disimpan (backup) di disk
