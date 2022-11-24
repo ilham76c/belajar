@@ -1,0 +1,10 @@
+Agenda 
+- Pengenalan Version Control
+- Pengenalan Git
+- Repository
+- The Three Tree
+- Working Directory
+- Staging Index
+- Commit
+- Reset Commit
+- Dan lain-lain
