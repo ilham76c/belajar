@@ -1,0 +1,27 @@
+Configuration
+- Setelah selesai menginstall Git, hal pertama yang harus kita lakukan adalah melakukan konfigurasi 
+- Yang paling utama diawal adalah mengkonfigurasi user name dan user email
+  Contoh:
+    $ git config --global user.name "Moh. Ilham Burhanuddin"
+    $ git config --global user.email "my@email.com"
+
+
+Membuat Visual Studio Bisa Diakses Melalui Terminal 
+- Jika visual studio code belum bisa diakses melalui terminal atau perintah "$ code" menampilkan output not found,
+  Anda bisa membuatnya bisa diakses dengan cara:
+    - buka visual studio code
+    - tekan "ctrl -> shift -> p"
+    - ketik "install"
+    - kemudian pilih "Shell Command: Install 'code' command in PATH"
+   
+
+Menggunakan Visual Studio Code sebagai Default Editor Git
+- Agar mempermudah, kita akan menjadikan Visual Studio Code sebagai default editor untuk Git dan default diff tool
+  Contoh:
+    $ git config --global core.editor "code --wait" #default editor
+    $ git config --global diff.tool "default-difftool"
+    $ git config --global difftool.default-difftool.cmd "code --wait --diff \$LOCAL \$REMOTE"
+
+
+Melihat Seluruh Configuration
+$ git config --list --show-origin
