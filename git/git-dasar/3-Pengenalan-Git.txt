@@ -1,0 +1,26 @@
+Sejarah Git 
+- Git muncul dengan latar belakang OpenSource project Linux Kernel
+- Tahun 1991-2002, Linux Kernel di develop hanya dengan memanfaatkan patch dan archived files
+- Tahun 2002, Linux Kernel mulai menggunakan DVCs bernama BitKeeper
+- Di tahun 2005, hubungan antara perusahaan pemilik BitKeeper dengan komunitas Linux Kernel kurang baik, sehingga pembuat Linux yaitu Linus Trovald mulai membuat DVCs sendiri
+- Git pertama kali dikenalkan tahun 2005, semakin kesini populer dan sekarang menjadi DVCs yang paling populer di dunia
+- Git sangat cepat, ringan dan baik dalam me-manage project dengan ukuran besar
+
+
+Pengenalan Git 
+- Jadi, Git adalah salah satu DVCs yang ada 
+- Git tidak membutuhkan server untuk melakukan perubahan atau melihat riwayat revisi, hal ini dikarenakan dalam Git, semua riwayat project akan selalu di duplikasi, baik itu server ataupun di local computer
+- Artinya sebenarnya Git juga bisa digunakan sebagai Local Version Control
+- Setiap perubahan yang terjadi di Git akan selalu dibuat signature yang menggunakan algoritma hashing SHA-1. Hal ini menjadikan perubahan sekecil apapun pasti bisa dideteksi oleh Git
+- Semua hal yang terjadi di Git secara otomatis akan dicatat, hal ini menjadikan perubahan apapun di Git, pasti selalu bisa dikembalikan ke versi sebelumnya
+
+
+Menginstall Git
+- Git adalah aplikasi OpenSource dan gratis, kita bisa download aplikasi Git dengan bebas
+- Git tersedia untuk berbagai sistem operasi, seperti Windows, Mac, dan Linux
+- Kita bisa download Git di https://git-scm.com/downloads
+
+
+Memastikan Git Berjalan 
+- Git merupakan aplikasi berbasi terminal atau command line, oleh karena itu untuk menggunakan Git kita perlu membuka terminal atau command line
+- Untuk mengecek versi Git yang terinstall di local komputer kita, kita bisa menggunakan perintah "git --version"
