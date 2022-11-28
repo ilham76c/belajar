@@ -1,0 +1,15 @@
+Sebelum Belajar
+- Sudah paham dasar Git
+- Pernah Menggunakan Sistem Operasi Linux
+- Pernah Menggunakan VPS atau Cloud Compute
+
+
+Agenda
+- Pengenalan Jenkins
+- Menginstall Jenkins
+- Job
+- Integrasi dengan Git
+- Credential
+- Build Step 
+- Scheduled Job
+- Dan lain-lain
