@@ -1,0 +1,13 @@
+Pengenalan Jenkins
+- Jenkins adalah Open Source Automation yang paling populer saat ini 
+- Sebelum Jenkins, awalnya project ini bernama Hudson
+- Hudson dibuat menggunakan Java, dan pengembang inti dari Hudson kebanyakan bekerja di Sun Microsystem (pemilik Java)
+- Tahun 2011, terjadi sengketa setelah pembelian Sun Microsystem oleh Oracle, dan karena trademark Hudson dipegang oleh Oracle, akhirnya pengembang inti dari Hudson membuat project baru bernama Jenkins dari source code Hudson
+- Hudson sendiri akhirnya didonasikan ke Eclipse Foundation tahun 2012 dan akhirnya pengembangannya berhenti tahun 2017
+- https://www.jenkins.io/
+
+
+Jenkins Plugin
+- Jenkins sendiri merupakan sebuah platform untuk Automation Server
+- Kebanyakan fitur di Jenkins sendiri tersedia dalam bentuk plugin, bahkan kita bisa membuat plugin sendiri jika kita mau
+- https://plugins.jenkins.io/
