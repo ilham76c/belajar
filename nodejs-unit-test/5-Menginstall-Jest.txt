@@ -1,0 +1,19 @@
+Menginstall Jest
+- Jest digunakan untuk membuat unit test saja, sehingga kita tidak perlu menambahkan sebagai dependency production
+- Kita cukup tambahkan sebagai development dependency
+- Kita bisa tambahkan di package.json atau gunakan perintah:
+  $ npm install jest --save-dev
+- https://www.npmjs.com/package/jest
+
+
+Menjalankan Unit Test
+- Untuk menjalankan unit test menggunakan Jest, kita bisa jalankan file jest yang ada di "node_modules/.bin/jest"
+- Tapi kita juga bisa menggunakan script di package.json, cukup tuliskan '{ "test": "jest" }' pada property scripts
+
+
+NPX
+- Menjalankan perintah jest lumayan ribet karena kita harus selalu menjalankan melalui folder node_modules/.bin/
+- Untungnya, di NodeJS terdapat program bernama NPX (Node Package Runner)
+- NPX ini digunakan spesial untuk menjalankan perintah yang bisa secara otomatis mendeteksi file yang terdapat di node_modules/.bin/
+- Jadi untuk menjalankan Jest, kita bisa menggunakan perintah:
+  $ npx jest
