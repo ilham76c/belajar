@@ -1,0 +1,7 @@
+Agenda
+- Pengenalan Testing
+- Berkenalan denga Jest Library
+- Membuat Unit Test
+- Matchers
+- Mock
+- Dan lain-lain
