@@ -1,0 +1,4 @@
+Membuat Unit Test
+- Jest sudah menyediakan function yang diregistrasikan secara global saat kita menambahkan dependency Jest, function tersebut bernama test(), dan digunakan untuk membuat unit test
+- Parameter pertama dari function test() adalah nama dari unit test, dan yang kedua adalah function yang berisi kode unit test
+
