@@ -1,0 +1,20 @@
+NodeJS Assertion Package
+- NodeJS sendiri sebenarnya memiliki package untuk melakukan asssertion, namun kita tidak akan membahasnya, karena jarang sekali orang menggunakan package tersebut
+- https://nodejs.org/api/assert.html
+- Programmer NodeJS kebanyakan menggunakan library yang lebih baik untuk melakukan unit test
+
+
+NodeJS Unit Test Library
+Sebenarnya ada banyak sekali library open source yang bisa kita gunakan untuk melakukan unit test di NodeJS
+- Jest    : https://jestjs.io/
+- Mocha   : https://mochaorg.org/
+- Jasmine : https://jasmine.github.io/
+- Dan masih banyak yang lainnya
+
+
+Pengenalan Jest
+- Jest adalah salah satu library untuk unit test NodeJS yang sangat populer 
+- Jest sendiri dibuat oleh Facebook
+- Jest terintegrasi sangat baik dengan banyak teknologi seperti NodeJS, ReactJS, VueJS, dan lain-lain
+- Jest fokus pada kesederhanaan, sehingga penggunaannya sangat mudah untuk pemula yang ingin mencoba unit test
+- https://jestjs.io/
