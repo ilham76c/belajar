@@ -1,0 +1,21 @@
+Kekurangan Jest 
+- Sejak awal belajar NodeJS, kita selalu menggunakan JavaScript Modules 
+- Sayangnya, Jest sampai dibuatnya materi ini, belum mendukung JavaScript Modules, masih menggunakan cara lama menggunakan CommonJS dengan memanfaatkan function require()
+- Untungnya, ada library yang bernama Babel, yang bisa kita gunakan untuk membantu Jest
+
+
+Jest Code Transformation
+- Jest mendukung code transformation, yaitu fitur dimana kita bisa melakukan perubahan kode program sebelum dijalankan oleh Jest
+- Fitur ini dimanfaatkan untuk melakukan kompilasi ke kode JavaScript yang bisa dimengerti oleh Jest, memanfaatkan library Babel
+- https://jestjs.io/docs/code-transformation
+
+
+Babel 
+- Babel adalah JavaScript Compiler, yang digunakan untuk melakukan kompilasi kode JavaScript ke kode JavaScript yang berbeda versi, biasanya ke versi yang lebih lama agar kompatibel dengan browser versi lama 
+- Dengan Babel, kita bisa membuat kode program dengan fitur JavaScript terbaru, seperti Modules, tapi bisa di compile menjadi kode JavaScript lama sehingga kompatibel ketika dijalankan oleh teknologi lama atau yang belum mendukung fitur JavaScript baru 
+- https://babeljs.io/
+
+
+Integrasi Babel dan Jest
+- Jest dan Babel dapat terintegrasi dengan baik, sehingga Jest bisa secara otomatis melakukan kompilasi kode JavaScript unit test kita dengan Babel, dan menjalankan kode JavaScript dengan versi yang kompatibel dengan Jest
+- https://babeljs.io/setup
