@@ -7,11 +7,6 @@
   "scripts": {
     "test": "jest"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    }
-  },
   "keywords": [
     "Jest",
     "NodeJS"

@@ -1,0 +1,16 @@
+Jest Configuration
+- Jest memiliki banyak konfigurasi, namun jika kita tidak mengubah konfigurasinya, Jest sudah memiliki default konfigurasi 
+- Ada banyak sekali konfigurasi yang terdapat di Jest, kita akan bahas sambil berjalan, dan memang diperlukan saja
+
+
+File Konfigurasi Jest
+- Jest sendiri mendukung dua cara untuk menyimpan data konfigurasi
+- Pertama, menyimpan di file package.json dengan key jest 
+- Kedua, dengan menyimpan sebagai file JavaScript di jest.config.js (.ts/.mjs/.js), atau membuatnya secara otomatis dengan perintah:
+  $ jest --init
+- Jika konfigurasi menggunakan file jest.config.js (.ts/.mjs/.js), jangan lupa untuk memindahkan konfigurasi Jest di package.json
+
+
+Pengaturan Konfigurasi
+- Konfigurasi di Jest sangat sederhana, cukup gunakan key-value 
+- Dimana kita bisa melihat semua konfigurasi key yang tersedia dan kegunaannya di halaman https://jestjs.io/docs/configuration
