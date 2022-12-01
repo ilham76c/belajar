@@ -1,0 +1,8 @@
+Equals Matchers
+- Salah satu Matchers yang biasa digunakan ketika membuat unit test adalah equals matchers 
+- Ini digunakan untuk memastikan bahwa data sesuai atau sama dengan ekspektasi kita 
+
+
+Equals Matchers Function
+expect(value).toBe(expected)    -> Value sama dengan expected, biasanya digunakan untuk value bukan object
+expect(value).toEqual(expected) -> Value sama dengan expected, dimana membandingkan semua properties secara recursive, atau dikenal dengan deep equality
