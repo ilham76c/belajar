@@ -1,0 +1,12 @@
+Matchers
+- Saat kita membuat unit test, hal yang dilakukan adalah kita biasanya memiliki ekspektasi
+- Contoh pada kode sum() sebelumnya, ketika kita panggil function sum() dengan parameter 1 dan 2, ekspektasi kita adalah hasil return dari function sum() tersebut adalah 3
+- Di Jest, hal ini dinamakan Matchers
+- https://jestjs.io/docs/using-Matchers
+
+
+Expect Function 
+- Matchers di Jest dipresentasikan dalam sebuah function bernama expect(value)
+- Function expect() mengembalikan object Matchers, yang bisa kita gunakan untuk mengetest value yang kita expect()
+- Ada banyak sekali function untuk melakukan test di Matchers, kita bisa baca detail-nya di halaman dokumentasi API untuk function expect() 
+- https://jestjs.io/docs/expect
