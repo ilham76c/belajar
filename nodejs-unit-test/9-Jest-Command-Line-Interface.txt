@@ -1,0 +1,8 @@
+Jest Command Line Interface
+- Seperti yang sudah dibahas sebelumnya, saat kita menginstall dependency Jest ke project kita, terdapat executable file bernama jest di folder node_modules/.bin
+- Dan untuk menjalankan unit test, kita bisa menggunakan executable file jest tersebut
+- Jest sendiri sebenarnya banyak sekali perintah tambahannya, dan kadang kita perlu memanfaatkannya, jadi tidak hanya mengetikkan perintah jest saja
+- Untuk melihat detail perintah apa saja yang bisa kita gunakan, silahkan gunakan perintah:
+  $ npx jest --help
+  $ npx jest --runTestsByPath test/sum.test.js
+  $ npx jest --testNamePattern "tes 3"

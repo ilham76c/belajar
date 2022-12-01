@@ -11,3 +11,9 @@ test('sum(4, -10) must be -6', () => {
 
   expect(result).toBe(-6);
 });
+
+test('tes 3', () => {
+  const result = sum(-5, -5);
+
+  expect(result).toBe(-10);
+});
