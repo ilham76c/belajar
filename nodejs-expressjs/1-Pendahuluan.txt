@@ -1,0 +1,6 @@
+Agenda
+- Pengenalan ExpressJS
+- App 
+- Route 
+- Template 
+- Dan lain-lain
