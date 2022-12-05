@@ -1,0 +1,5 @@
+Request 
+- Saat kita membuat callback di router, parameter pertama adalah object request, yang secara otomatis diisi oleh ExpressJS
+- Object Request akan berisikan informasi tentang HTTP request yang masuk ke callback tersebut
+- Ada banyak sekali informasi HTTP request yang bisa kita ambil dari object request, seperti Query, Param, Header, Body, dan lain-lain
+- https://expressjs.com/en/4x/api.html#req
