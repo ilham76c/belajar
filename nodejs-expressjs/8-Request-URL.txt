@@ -1,0 +1,8 @@
+Request URL
+- Untuk mendapatkan URL saat ini, kita bisa menggunakan object request
+- req.originalUrl, untuk mendapatkan url secara full beserta query param-nya
+- req.path, untuk mendapatkan path url tanpa query param 
+- req.hostname, untu mendapatkan nama host atau domain dari web kita 
+- req.protocol, untuk mendapatkan protocol dari url web
+- req.secure, untuk mengecek apakah url web-nya https atau bukan
+- req.subdomains, untuk mendapatkan array subdomain dari url web kita

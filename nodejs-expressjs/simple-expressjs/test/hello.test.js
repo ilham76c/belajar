@@ -22,3 +22,25 @@ test('Request', async () => {
 
   expect(response.text).toBe('Hello ilham');
 });
+
+test('Request URL', async () => {
+  app.get('/product', (req, res) => {
+    res.json({
+      path: req.path,
+      originalUrl: req.originalUrl,
+      hostname: req.hostname,
+      protocol: req.protocol,
+      secure: req.secure
+    });
+  });
+
+  const response = await request(app).get('/product').query({ name: 'laptop' });
+
+  expect(response.body).toEqual({
+    path: '/product',
+    originalUrl: '/product?name=laptop',
+    hostname: '127.0.0.1',
+    protocol: 'http',
+    secure: false
+  });
+});
