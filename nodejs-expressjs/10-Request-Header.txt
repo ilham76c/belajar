@@ -1,0 +1,4 @@
+Request Header
+- Object Request juga bisa kita gunakan untuk mendapatkan informasi HTTP Header dari Request
+- Kita bisa menggunakan method req.get(name) atau req.header(name) untuk mendapatkan header berdasarkan name, khusus untuk HTTP Header, name-nya adalah case insensitive
+- https://expressjs.com/en/4x/api.html#req.get

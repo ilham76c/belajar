@@ -1,9 +1,8 @@
 import express from 'express';
 import request from 'supertest';
 
-const app = express();
-
 test('Hello World', async () => {
+  const app = express();
   app.get('/', (req, res) => {
     res.send('Hello World!');
   });
@@ -14,6 +13,7 @@ test('Hello World', async () => {
 });
 
 test('Request', async () => {
+  const app = express();
   app.get('/name', (req, res) => {
     res.send(`Hello ${req.query.name}`);
   });
@@ -24,6 +24,7 @@ test('Request', async () => {
 });
 
 test('Request URL', async () => {
+  const app = express();
   app.get('/product', (req, res) => {
     res.json({
       path: req.path,
@@ -47,7 +48,6 @@ test('Request URL', async () => {
 
 test('Request Params', async () => {
   const app = express();
-
   app.get('/name', (req, res) => {
     res.send(`Hello, ${req.query.firstName} ${req.query.lastName}`);
   });
@@ -55,4 +55,16 @@ test('Request Params', async () => {
   const response = await request(app).get('/name').query({ firstName: 'Moh. Ilham', lastName: 'Burhanuddin' });
 
   expect(response.text).toBe('Hello, Moh. Ilham Burhanuddin');
+});
+
+test('Request Header', async () => {
+  const app = express();
+  app.get('/', (req, res) => {
+    const type = req.get('Accept');
+    res.send(`Request type is ${type}`);
+  });
+
+  const response = await request(app).get('/').set('Accept', 'text/plain');
+
+  expect(response.text).toBe('Request type is text/plain');
 });
