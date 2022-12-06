@@ -1,0 +1,4 @@
+Response Header
+- Kita juga bisa mengubah HTTP Response Header dengan menggunakan method res.set(name, value) atau res.header(name, value)
+- Atau jika ingin langsung beberapa name, kita bisa masukan dalam bentuk object ke dalam parameter name-nya
+- https://expressjs.com/en/4x/api.html#res.set

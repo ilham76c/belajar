@@ -98,3 +98,18 @@ test('Response Status', async () => {
   const response2 = await request(app).get('/');
   expect(response2.status).toBe(400);
 });
+
+test('Response Header', async () => {
+  const app = express();
+  app.get('/', (req, res) => {
+    res.set({
+      'X-Powered-By': 'YRAV',
+      'X-Author': 'Moh. Ilham Burhanuddin'
+    }).end();
+  });
+
+  const response = await request(app).get('/');
+
+  expect(response.get('X-Powered-By')).toBe('YRAV');
+  expect(response.get('X-Author')).toBe('Moh. Ilham Burhanuddin');
+});
