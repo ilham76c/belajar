@@ -1,0 +1,4 @@
+Request Query Parameter 
+- Request juga bisa digunakan untuk mengambil query parameter 
+- Secara otomatis, semua query parameter akan disimpan dalam bentuk object di req.query 
+- https://expressjs.com/en/4x/api.html#req.query

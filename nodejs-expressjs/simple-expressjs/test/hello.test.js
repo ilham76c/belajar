@@ -44,3 +44,15 @@ test('Request URL', async () => {
     secure: false
   });
 });
+
+test('Request Params', async () => {
+  const app = express();
+
+  app.get('/name', (req, res) => {
+    res.send(`Hello, ${req.query.firstName} ${req.query.lastName}`);
+  });
+
+  const response = await request(app).get('/name').query({ firstName: 'Moh. Ilham', lastName: 'Burhanuddin' });
+
+  expect(response.text).toBe('Hello, Moh. Ilham Burhanuddin');
+});
