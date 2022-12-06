@@ -68,3 +68,14 @@ test('Request Header', async () => {
 
   expect(response.text).toBe('Request type is text/plain');
 });
+
+test('Request Response', async () => {
+  const app = express();
+  app.get('/', (req, res) => {
+    res.send('From Server');
+  });
+
+  const response = await request(app).get('/');
+
+  expect(response.text).toBe('From Server');
+});
