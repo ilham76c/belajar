@@ -1,0 +1,4 @@
+Response Body
+- Untuk mengubah Response Body, kita bisa menggunakan method res.send(body)
+- Dimana parameter body bisa kita kirim dalam bentuk buffer atau string, baik itu text, html, json dan lain-lain
+- https://expressjs.com/en/4x/api.html#res.send
