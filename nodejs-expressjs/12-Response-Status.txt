@@ -1,0 +1,3 @@
+Response Status
+- Saat kita ingin mengubah HTTP Status dari HTTP Response yang kita buat, kita bisa menggunakan method res.status(code)
+- https://expressjs.com/4x/api.html#res.status

@@ -79,3 +79,22 @@ test('Request Response', async () => {
 
   expect(response.text).toBe('From Server');
 });
+
+test('Response Status', async () => {
+  const app = express();
+  app.get('/', (req, res) => {
+    if (req.query.name) {
+      res.status(200).send(`Hello, ${req.query.name}`);
+    } else {
+      res.status(400).end();
+    }
+  });
+
+  const response1 = await request(app).get('/').query({ name: 'ilham' });
+
+  expect(response1.status).toBe(200);
+  expect(response1.text).toBe('Hello, ilham');
+
+  const response2 = await request(app).get('/');
+  expect(response2.status).toBe(400);
+});
