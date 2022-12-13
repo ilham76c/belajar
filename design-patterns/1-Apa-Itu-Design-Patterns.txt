@@ -1,0 +1,12 @@
+Apa itu Design Patterns?
+- Design Patterns adalah solusi umum dari permasalahan-permasalahan umum yang sering terjadi dalam membuat Software.
+- Design Patterns bukanlah hal yang bisa di translate ke dalam kode program secara langsung. Melainkan hanya template dan panduan cara menyelesaikan permasalahan.
+
+
+Siapa yang butuh belajar Design Patterns?
+- Semua software developer yang ingin membuat design software dengan lebih baik.
+
+
+Keuntungan menggunakan Design Patterns?
+- Design software lebih baik
+- Software mudah untuk di maintain
