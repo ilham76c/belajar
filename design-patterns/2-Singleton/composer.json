@@ -1,0 +1,15 @@
+{
+    "name": "ilham76c/2-singleton",
+    "autoload": {
+        "psr-4": {
+            "Singleton\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Moh. Ilham Burhanuddin",
+            "email": "m.ilham.b.97@gmail.com"
+        }
+    ],
+    "require": {}
+}
