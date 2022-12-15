@@ -2,7 +2,7 @@
     "name": "ilham76c/2-singleton",
     "autoload": {
         "psr-4": {
-            "Singleton\\": "src/"
+            "Singleton\\": "src/2-Singleton/"
         }
     },
     "authors": [
