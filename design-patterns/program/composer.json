@@ -3,7 +3,8 @@
     "autoload": {
         "psr-4": {
             "Singleton\\": "src/2-Singleton/",
-            "Builder\\": "src/3-Builder/"
+            "Builder\\": "src/3-Builder/",
+            "Factory\\": "src/4-Factory-Method/"
         }
     },
     "authors": [
