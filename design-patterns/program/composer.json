@@ -5,7 +5,9 @@
             "Singleton\\": "src/2-Singleton/",
             "Builder\\": "src/3-Builder/",
             "Factory\\": "src/4-Factory-Method/",
-            "AbstractFactory\\": "src/5-Abstract-Factory/"
+            "AbstractFactory\\": "src/5-Abstract-Factory/",
+            "Prototype\\": "src/6-Prototype/",
+            "ObjectPool\\": "src/7-Object-Pool/"
         }
     },
     "authors": [

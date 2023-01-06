@@ -1,0 +1,8 @@
+# Object Pool #
+Pada singleton pattern kita hanya membuat satu object connection ke database, 
+kendalanya jika banyak proses yang membutuhkan connection ke database 
+maka proses akan antri karena hanya ada satu object connection yang dapat digunakan,
+hal tersebut dapat mengakibatkan aplikasi kita jadi lambat. 
+Solusi dari permasalahan tersebut adalah dengan cara membuat Object Pool atau Database Connection Pool.
+Kita akan membuat pool yang maksimal berisi 100 object connection, jadi ketika ada proses yang membutuhkan connection
+dia akan meminjamnya dari pool, setelah object connection selesai digunakan, kemudian dikembalikan lagi ke Object Pool.
