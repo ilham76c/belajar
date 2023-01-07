@@ -8,7 +8,8 @@
             "AbstractFactory\\": "src/5-Abstract-Factory/",
             "Prototype\\": "src/6-Prototype/",
             "ObjectPool\\": "src/7-Object-Pool/",
-            "Adapter\\": "src/8-Adapter/"
+            "Adapter\\": "src/8-Adapter/",
+            "Repository\\": "src/9-Repository/"
         }
     },
     "authors": [

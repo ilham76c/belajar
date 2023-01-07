@@ -1,0 +1,1 @@
+Repository pattern adalah konsep dari Data Access Object
