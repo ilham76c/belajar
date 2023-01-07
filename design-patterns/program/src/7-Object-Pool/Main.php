@@ -1,10 +1,12 @@
 <?php
 namespace ObjectPool;
 
+require 'vendor/autoload.php';
+
 use ObjectPool\DatabasePool;
 
-class OrderService {
-    public function save() {
+class Main {
+    public function run() {
         try {
             $pool = new DatabasePool();
             $connection1 = $pool::getConnection();
@@ -29,5 +31,7 @@ class OrderService {
         } catch (\Exception $e) {
             echo $e->getMessage();
         }
-    }
+    }    
 }
+$main = new Main();
+$main->run();
