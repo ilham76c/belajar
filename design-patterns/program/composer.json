@@ -12,7 +12,8 @@
             "Repository\\": "src/9-Repository/",
             "Facade\\": ["src/10-Facade/", "src/10-Facade/Entity/", "src/10-Facade/Facade/", "src/10-Facade/Repository/"],
             "TemplateMethod\\": "src/11-Template-Method/",
-            "Bridge\\": "src/12-Bridge/"
+            "Bridge\\": "src/12-Bridge/",
+            "Composite\\": "src/13-Composite/"
         }
     },
     "authors": [
