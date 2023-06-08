@@ -1,0 +1,7 @@
+## Setup Project ##
+- Gunakan database MySQL
+- Buat database belajar _acid
+- Buat table accounts dengan kolom:
+    ~ id varchar(100) primary key
+    ~ name varchar(100) not null
+    ~ balance bigint not null
