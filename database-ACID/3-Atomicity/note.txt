@@ -1,3 +1,10 @@
+## Atomicity ##
+- Setiap statement dalam transaksi (baik itu membaca, menulis, mengubah atau menghapus), diperlakukan sebagai satu kesatuan
+- Jika transaksi berhasil, maka seluruh statement harus berhasil
+- Jika transaksi gagal, maka seluruh statement tidak boleh ada yang berhasil, atau digagalkan
+- Properti ini mencegah terjadinya kehilangan atau kerusakan data, misal jika ditengah transaksi terjadi kegagalan aplikasi
+
+
 ## Atomicity di MySQL ##
 - Implementasi Atomicity di MySQL menggunakan database transaction
 - Setiap operasi di MySQL, selalu menggunakan database transaction, secara default MySQL akan melakukan auto commit setiap mengeksekusi statement
