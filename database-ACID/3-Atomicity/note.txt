@@ -1,0 +1,4 @@
+## Atomicity di MySQL ##
+- Implementasi Atomicity di MySQL menggunakan database transaction
+- Setiap operasi di MySQL, selalu menggunakan database transaction, secara default MySQL akan melakukan auto commit setiap mengeksekusi statement
+- Kecuali kita lakukan database transaction secara manual
