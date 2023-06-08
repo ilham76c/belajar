@@ -1,0 +1,4 @@
+## Consistency ## 
+- Memastikan bahwa transaksi hanya bisa mengubah data dari satu kondisi konsisten ke kondisi lainnya
+- Setiap data yang ditulis ke database harus valid sesuai dengan semua aturan yang sudah ditetapkan
+- Hal ini mencegah data menjadi tidak konsisten, dan menjamin integritas relasi antar data
