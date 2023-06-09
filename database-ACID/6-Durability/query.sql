@@ -12,7 +12,7 @@ SELECT * FROM accounts;
 -- misal selanjutnya mysql-nya shutdown/mati
 
 -- lalu nyalakan lagi mysql-nya
--- kemudian select data, data di table tidak akan berubah karena query di atas belum di commit
+-- kemudian select data, data di table tidak akan berubah dan kembali ke state awal karena query di atas belum di commit
 SELECT * FROM accounts;
 
 UPDATE accounts SET balance = balance - 500000 WHERE id = 'ilham76c';
