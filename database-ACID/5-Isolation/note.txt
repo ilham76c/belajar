@@ -1,0 +1,4 @@
+## Isolation ##
+- Transaksi sering dieksekusi secara bersamaan (misalnya, beberapa transaksi membaca dan menulis ke tabel pada waktu yang sama).
+- Isolation memastikan bahwa eksekusi transaksi secara bersamaan meninggalkan database dalam keadaan yang sama seperti yang diperoleh jika transaksi dieksekusi secara berurutan.
+- Isolation adalah tujuan utama kontrol konkurensi, tergantung pada tingkat isolasi yang digunakan, efek dari transaksi yang tidak lengkap mungkin tidak terlihat oleh transaksi lain
