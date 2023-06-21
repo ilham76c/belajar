@@ -1,0 +1,20 @@
+## Contoh Kasus : Toko Online ##
+- Misal kita akan membuat Toko Online (ruang lingkup)
+
+## Menentukan Entity ##
+- Hal pertama yang perlu kita tentukan dalam ERD adalah menentukan Entity yang akan terlibat dalam toko online tersebut
+- Misal dalam toko online, kita akan menentukan tiga Entity yang terlibat, yaitu Pembeli, Penjual dan Barang
+- Perlu diingat, dalam toko online yang sebenarnya banyak sekali Entity yang terlibat
+
+## Menentukan Attribute Key ##
+- Setiap Entitywajib memiliki Attribute Key, maka selanjutnya kita perlu menentukan Attribute Key dari tiap Entity
+- Contoh:
+    ~ Pelanggan, Attribute key-nya adalah email
+    ~ Penjual, Attribute key-nya adalah email
+    ~ Barang, Attribute key-nya adalah SKU atau nomor barang
+
+## Menentukan Attribute
+- Setelah menentukan Attribute Key, selanjutnya kita bisa menentukan Attribute dari setiap Entity yang masuk ke ruang lingkup yang akan kita buat
+
+## Selanjutnya ## 
+- Selanjutnya kita perlu menentukan Relationship antar Entity, dan kita akan bahas di materi tersendiri
