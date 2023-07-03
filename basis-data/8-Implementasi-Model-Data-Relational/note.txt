@@ -1,0 +1,21 @@
+## Menambah Relasi One to One ##
+- Sebelum kita lanjut, kita akan coba tambahkan Entity yang berelasi One to One di kasus Toko Online kita
+- Misal di kasus Toko Online, kita akan menambahkan Entity Dompet, dimana Pembeli hanya bisa memiliki satu Dompet, dan satu Dompet hanya dimiliki oleh satu Pembeli
+- Dan di Dompet, kita akan tambahkan Attribute Key Email, dan Attribute Saldo
+
+
+## Implementasi One to One ##
+- Pada kasus implementasi relasi One to One, terdapat dua cara
+- Jika pada kasus tiap Entity dipastikan menggunakan Attribute Key dengan nilai sama, maka kita bisa gunakan Attribute Key di tiap Entity sebagai acuan untuk saling berelasi
+- Namun jika pada kasus tiap Entity bisa memiliki Attribute Key yang berbeda, maka kita perlu membuat Attribute Foreign Key di salah satu Entity yang lebih lemah, dimana Attribute Foreign Key tersebut harus unique (tidak boleh ada yang sama)
+
+
+## Implementasi One to Many atau Many to One ##
+- Pada kasus relasi One to Many, implementasinya tergantung relasi
+- Jika pada kasus relasi terdapat attribute deskriptif, maka diperlukan tabel baru sebagai implementasi dari Relationship-nya
+- Namun, pada kasus relasi tidak membeli attribute deskriptif, maka tidak perlu tabel baru, kita hanya butuh menambah Attribute Foreign Key di Entity yang bersifat Many
+
+
+## Implementasi Many to Many ##
+- Pada implementasi relasi Many to Many, maka diimplementasikan dalam bentuk tabel relasi
+- Dimana di dalam tabel relasi tersebut terdapat semua Attribute Foreign Key dari semua Entity yang berelasi
