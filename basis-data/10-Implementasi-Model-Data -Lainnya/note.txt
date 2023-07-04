@@ -1,0 +1,3 @@
+## Implementasi Model Data Lainnya ##
+- Sekarang kita akan coba lihat bagaimana implementasi perubahan model data yang sudah kita lakukan di materi sebelumnya
+
