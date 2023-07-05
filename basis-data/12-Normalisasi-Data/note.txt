@@ -1,0 +1,15 @@
+## Normalisasi Data ##
+- Normalisasi data adalah proses tahapan dalam membuat basis data, yang bertujuan untuk menghilangkan data redundancy/ganda dan data yang tidak konsisten
+- Aturan dalam normalisasi data adalah membagi tabel besar menjadi tabel yang lebih kecil, dan menghubungkannya menggunakan relasi
+
+
+## Bentuk Normal Basis Data ##
+- Pencetus relational model, Edgar Codd mengajukan teori normalisasi data dengan mengenalkan praktek bentuk normal ke-1, lalu dilanjut dengan ke-2 dan bentuk normal ke-3
+- https://en.wikipedia.org/wiki/Edgar_F._Codd
+- Sampai daat ini, bentuk normal basis data bisa sampai bentuk normal ke-6, namun kebanyakan pada prakteknya, bentuk normal basis data hanya sampai bentuk normal ke-3
+
+
+## Contoh Kasus ##
+- Normalisasi data biasanya mengacu pada hasil akhir dari sebuah ruang lingkup, berbeda dengan yang awal kita lakukan sebelumnya
+- Normalisasi data biasanya datang dari kebutuhan akhir yang sudah selesai, lalu kita perlu membuat model data dari kebutuhan akhir tersebut
+- Misalnya, kita akan coba membuat sebuah model data, dari kebutuhan laporan Order dari sebuah toko online
