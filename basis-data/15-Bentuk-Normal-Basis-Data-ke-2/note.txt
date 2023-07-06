@@ -1,0 +1,15 @@
+## Bentuk Normal Basis Data ke-2 ##
+- Harus sudah dalam bentuk normal basis data ke-1
+- Buat tabel terpisah untuk nilai-nilai yang keluar berual kali pada beberapa baris
+- Tambahkan primary key pada tiap tabel
+- Hubungkan menggunakan foreign key
+
+
+## Revisi Contoh Kasus: Bentuk Normal ke-2 ##
+- Kolom-kolom Produk yang berulang
+- Kolom-kolom Order, Penjual dan Pembeli terdapat berulang
+- https://docs.google.com/spreadsheets/d/1epqlWZiTkCmAWJRy_h2K35PjO9f60vVR6uDbKSRjK9k/edit#gid=1077699423 
+
+
+## Contoh ##
+- Ada di sheet Second Normal Form
