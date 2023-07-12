@@ -1,0 +1,12 @@
+## Pengenalan TypeScript ##
+- TypeScript adalah bahasa pemrograman berorientasi object yang dibuat oleh Microsoft
+- TypeScript adalah bahasa pemrograman yang di kompilasi menjadi kode JavaScript
+- Menggunakan TypeScript akan membuat kode kita lebih mudah dibaca dan di debug dibandingkan menggunakan JavaScript
+- TypeScript adalah bahasa pemrograman yang Strongly Type seperti Java, C#, dan C/C++
+- https://www.typescriptlang.org/ 
+
+
+## Keuntungan Belajar TypeScript ##
+- Saat ini banyak sekali perusahaan yang mulai mengadopsi TypeScript, hal ini karena banyak fitur yang dimiliki oleh TypeScript yang sangat memudahkan saat proses development aplikasi 
+- Karena TypeScript melakukan kompilasi kode menjadi JavaScript, hal ini secara otomatis membuat kita tidak perlu pusing dengan fitur-fitur di JavaScript yang belum di support, karena TypeScript secara otomatis akan mengurusnya
+- Selain itu, banyak juga framework-framework yang populer sekarang mulai beralih menggunakan TypeScript, seperti ReactJS, VueJS, NestJS, dan lain-lain
