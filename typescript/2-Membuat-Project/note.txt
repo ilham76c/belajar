@@ -1,0 +1,14 @@
+## Membuat Project ##
+- Buat folder belajar-typescript-dasar
+- npm init
+- Buka package.json, dan tambahkan "type":"module"
+
+
+## Menambah Library Jest untuk Unit Test ##
+- npm install --save-dev jest @types/jest
+- https://www.npmjs.com/package/jest 
+
+
+## Menambah Library Babel ##
+- npm install --save-dev babel-jest @babel/preset-env
+- https://babeljs.io/setup#installation 
