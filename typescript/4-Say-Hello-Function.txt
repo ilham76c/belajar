@@ -1,0 +1,2 @@
+## Say Hello Function ##
+- Sebelum mulai belajar, kita akan coba membuat say hello function dengan file bertipe TypeScript
