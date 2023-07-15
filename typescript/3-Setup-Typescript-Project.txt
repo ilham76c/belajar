@@ -7,3 +7,7 @@
 - npx tsc --init
 - Semua konfigurasi akan dibuat di file tsconfig.json
 - Ubah "module" dari "commonjs" menjadi "ES6"
+
+
+## Setup TypeScript untuk Jest ##
+- https://jestjs.io/docs/getting-started#using-typescript
