@@ -1,0 +1,14 @@
+## Compile TypeScript ##
+- Seperti yang dijelaskan di awal, bahwa kode TypeScript tidak bisa langsung dijalankan, kita harus melakukan kompilasi terlebih dahulu menjadi JavaScript
+- Kita bisa menggunakan perintah "npx tsc"
+- Secara default, semua file hasil kompilasi akan disimpan di lokasi yang sama dengan file TypeScript
+- Praktek programmer TypeScript biasanya memisahkan lokasi hasil kompilasi ke sebuah folder bernama dist (distribution)
+- Untuk mengubah lokasi file hasil kompilasi, kita perlu mengubahnya di tsconfig.json 
+
+
+## Include dan Exclude ##
+- Secara default, semua file ts akan coba dikompilasi oleh TypeScript, namun terkadang kita tidak membutuhkan hal tersebut
+- Misalnya kita hanya ingin melakukan kompilasi untuk kode program, dan tidak ingin melakukan kompilasi kode unit test
+- Kita bisa tambahkan include dan exclude pada tsconfig.json
+- https://www.typescriptlang.org/tsconfig#include 
+- https://www.typescriptlang.org/tsconfig#exclude
