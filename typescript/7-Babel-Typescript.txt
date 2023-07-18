@@ -1,0 +1,29 @@
+## Babel TypeScript ##
+- Untuk menjalankan unit test, kita menggunakan Jest dan Babel
+- Banyak programmer TypeScript yang mengeluh ketika proses development, menggunakan TypeScript lebih lambat karena harus melakukan kompilasi terlebih dahulu
+- Oleh karena itu, @babel/typescript melakukan kompilasi dengan cara menghapus seluruh kode TypeScript dan menjadikan kode JavaScript, hal ini memang lucu tapi inilah kenyataannya 
+- Oleh karena itu, error TypeScript yang harusnya terjadi ketika Unit Test kadang tidak terjadi karena kode TypeScript dihapus oleh babel 
+- Oleh karena itu, kita harus secara reguler melakukan pengecekan menggunakan perintah "npx tsc" untuk memastikan tidak ada kode TypeScript yang bermasalah
+
+
+## Kode: Error TypeScript ##
+let name: string = "Moh. Ilham B.";
+let balance: number = 6000000;
+let isVip: boolean = true;
+
+console.log(name);
+console.log(balance);
+console.log(isVip);
+
+name = 1; // error
+balance = "5000000"; // error
+isVip = 7; // error
+
+/*
+* Jika kode diatas dijanlankan dengan perintah "npx tsc" maka akan muncul error,
+* akan tetapi jika dijanlankan dengan perintah "npx run test" tidak akan muncul error karena ketika menggunakan Jest semua kode TypeScript di translate menjadi JavaScript 
+*/
+
+
+## TypeScript Compiler ##
+- Untuk menjalankan TypeScript Compiler secara terus menerus, kita bisa menggunakan perintah "npx tsc --watch"
