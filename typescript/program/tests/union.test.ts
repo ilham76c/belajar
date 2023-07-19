@@ -1,13 +1,13 @@
 describe('Union Type', function() {
     it('should support in typescript', function() {
         let sample: number | string | boolean = 'Moh. Ilham B.';
-        console.info(sample);
+        expect(sample).toBe('Moh. Ilham B.');
 
         sample = 100;
-        console.info(sample);
+        expect(sample).toBe(100);
 
         sample = true;
-        console.info(sample);
+        expect(sample).toBe(true);
     });
 
     it('should support typeof operator', function() {
