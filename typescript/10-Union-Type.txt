@@ -1,0 +1,36 @@
+## Union Type ##
+- Seperti yang sudah kita ketahui, JavaScript sebenarnya bisa menyimpan berbagai jenis tipe data di variabel yang sama
+- Namun di TypeScript, hal itu dilarang karena merupakan praktek yang buruk
+- Jika kita ingin membuat variabel yang bisa berubah bentuk tipe data, kita bisa memberi tahunya menggunakan Union Type
+- Secara otomatis TypeScript akan membolehkan kita mengubah tipe data, namun sesuai yang sudah ditentukan di Union Type-nya
+
+
+## Kode: Union Type ##
+let sample: number | string | boolean = 'Moh. Ilham B.';
+sample = 100;
+sample = true;
+
+console.info(sample);
+
+
+## Menggunakan Union Type ##
+- Saat kita membuat Union Type, kita perlu berhati-hati ketika memanggil method yang menggunakan variabel tersebut
+- Hal ini karena tipe datanya berubah, oleh karena itu ada baiknya kita melakukan pengecekan tipe data terlebih dahulu menggunakan typeof 
+
+
+## Kode: Menggunakan Union Type ##
+function process (value: number | string | boolean) {
+    if (typeof value === 'string') {
+        return `Text: ${value.toUpperCase()}`;
+    } else if (typeof value === 'number') {
+        return `Number: ${value}`; 
+    } else if (typeof value === 'boolean') {
+        return `Boolean: ${value}`;
+    }
+
+    return 'Unknown type data';
+}
+
+expect(process(100)).toBe('Number: 100');
+expect(process('ilham')).toBe('Text: ilham');
+expect(process(true)).toBe('Boolean: true');
