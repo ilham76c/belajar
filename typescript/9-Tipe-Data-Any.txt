@@ -1,0 +1,17 @@
+## Tipe Data Any ##
+- Saat kita menggunakan TypeScript, setiap jenis data idealnya ada deklarasi data
+- Contoh saat kita ingin menggunakan tipe data JavaScript Object, idealnya harus ada ketentuan attribute yang dimilikinya, sedangkan di JavaScript hal itu tidak diwajibkan
+- Pada kasus kita ingin membuat tipe data yang bebas seperti di JavaScript, kita bisa gunakan tipe data Any
+- Tipe data Any tersebut menjadikan TypeScript tidak melakukan pengecekan apapun terhadap akses data tersebut
+
+
+## Kode: Tipe Data Any ##
+const person: any = {
+    id: 1,
+    name: 'Moh. Ilham B.',
+    age: 26
+};
+
+person.age = 50;
+
+console.info(person);
