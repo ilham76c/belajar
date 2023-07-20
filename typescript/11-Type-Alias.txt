@@ -1,0 +1,55 @@
+## Type Alias ##
+- Menggunakan tipe data Any sebenarnya tidak direkomendasikan
+- Biasanya kita akan menggunakan tipe data Any, jika data yang kita gunakan berasal dari library orang lain yang sudah tidak bisa diubah, atau data attribute-nya tidak pasti
+- Pada kasus kita membuat tipe data JavaScript object sendiri, kita bisa membuat alias untuk struktur tipe data object-nya
+
+
+## Kode: Alias ##
+export type Category = {
+    id: string,
+    name: string
+}
+
+export type Product = {
+    id: string,
+    name: string,
+    price: number,
+    category: Category
+}
+
+
+## Kode: Test Alias ##
+const category: Category = {
+    id: '1',
+    name: 'Handphone'
+};
+
+const product: Product = {
+    id: '1',
+    name: 'Samsung S20',
+    price: 2000000,
+    category: category
+};
+
+console.info(category);
+console.info(product);
+
+
+## Type Alias untuk Union Type ##
+- Type Alias juga bisa digunakan untuk membuat union type
+
+
+## Kode: Type Alias untuk Union Type ##
+export type ID = string | number;
+
+export type Category = {
+    id: ID,
+    name: string
+}
+
+export type Product = {
+    id: ID,
+    name: string,
+    price: number,
+    category: Category
+}
