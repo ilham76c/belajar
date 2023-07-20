@@ -1,0 +1,36 @@
+## Optional Properties ##
+- Secara default, saat kita membuat attribute di Object atau Type, maka attribute tersebut wajib diisi nilainya
+- Namun, kadang-kadang tidak semua attribute itu wajib diisi nilai
+- Pada kasus attribute tidak wajib diisi, kita bisa menambahkan tanda "?" untuk menandakan bahwa attribute tersebut optional
+
+
+## Kode: Optional Properties ##
+export type ID = string | number;
+
+export type Category = {
+    id: ID,
+    name: string,
+    description?: string
+}
+
+export type Product = {
+    id: ID,
+    name: string,
+    price: number,
+    category: Category,
+    description?: string
+}
+
+// or
+
+const person: { id: string, name: string, hobbies?: string[] } = {
+    id: '1',
+    name: 'ilham'
+};
+
+console.info(person);
+
+person.id = '2';
+person.name = 'jos';
+
+console.info(person);
