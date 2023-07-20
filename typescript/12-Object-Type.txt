@@ -1,0 +1,17 @@
+## Object Type ##
+- Pada kasus yang sederhana, kadang membuat alias terlalu bertele-tele, kita bisa membuat tipe data JavaScript secara langsung dengan mendeklarasikan detail type-nya ketika membuat variable
+- Hal ini lebih sederhana dibandingkan membuat Type terlebih dahulu
+
+
+## Kode: Object Type ##
+const person: { id: string, name: string } = {
+    id: '1',
+    name: 'ilham'
+};
+
+console.info(person);
+
+person.id = '2';
+person.name = 'jos';
+
+console.info(person);
