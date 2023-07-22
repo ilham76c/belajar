@@ -1,0 +1,16 @@
+## Null dan Undefined ##
+- Saat kita menggunakan tanda tanya "?" pada variable atau parameter, secara otomatis kita bisa mengirim data undefined
+- Dan terkadang kita juga ingin mengirim data null
+
+## Kode: Undefined ##
+function sayHello(name?: string) {
+    if (name) {
+        console.info(`Hello ${name}`);
+    } else {
+        console.info('Hello');
+    }
+}
+
+sayHello('ilham');
+const name: string | undefined = undefined;
+sayHello(name);
