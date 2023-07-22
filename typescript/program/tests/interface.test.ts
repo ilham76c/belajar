@@ -28,4 +28,17 @@ describe('Interface', function() {
             npwp: '12345678'
         });
     });
+
+    it('should support function interface', function() {
+        interface AddInterface {
+            (value1: number, value2: number): number
+        }
+        
+        const add: AddInterface = (value1: number, value2: number): number => {
+            return value1 + value2;
+        };
+        
+        expect(add(2, 5)).toBe(7);
+        expect(add(8, 8)).toBe(16);
+    });
 });

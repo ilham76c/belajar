@@ -1,0 +1,15 @@
+## Function Interface ##
+- Di TypeScript, kita bisa membuat deklarasi Function dalam bentuk Interface
+- Dengan begitu ketika kita ingin membuat variable yang berisi function, kita bisa dengan mudah menggunakan Interface tersebut
+
+
+## Kode: Function Interface ##
+interface AddInterface() {
+    (value1: number, value2: number): number
+}
+
+const add: AddInterface = (value1: number, value2: number): number => {
+    return value1 + value2;
+};
+
+console.info(add(1, 2));
