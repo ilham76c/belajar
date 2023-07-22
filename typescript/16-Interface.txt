@@ -1,0 +1,36 @@
+## Interface ##
+- Interface adalah cara melakukan deklarasi data selain menggunakan Type
+- Lantas kalau begitu, apa bedanya Interface dan Type?
+- Interface bisa dikembangkan dengan mudag dibanding dengan Type
+- Oleh karena itu, kebanyakan untuk tipe data yang kompleks, kebanyakan programmer TypeScript akan menggunakan Interface dibandingkan menggunakan Type
+
+
+## Kode: Interface ##
+export interface Seller {
+    id: number,
+    name: string,
+    address?: string
+}
+
+
+## Kode: Menggunakan Interface ##
+const seller: Seller = {
+    id: 1,
+    name: 'Toko Handphone'
+}
+
+console.info(seller);
+
+
+## Readonly Properties ##
+- Properties dapat kita jadikan readonly, yang artinya tidak bisa diubah lagi, dengan menggunakan kata kunci "readonly" pada attribute
+
+
+## Kode: Readonly Properties ##
+export interface Seller {
+    id: number,
+    name: string,
+    address?: string,
+    readonly nib: string,
+    readonly npwp: string
+}
