@@ -1,5 +1,6 @@
 import { Seller } from '../src/seller';
 import { Employee, Manager } from '../src/employee';
+import { Person } from '../src/person';
 
 describe('Interface', function() {
     it('should support in typescript', function() {
@@ -85,11 +86,6 @@ describe('Interface', function() {
     });
 
     it('should support function in interface', function() {
-        interface Person {
-            name: string;
-            sayHello(name: string): string;
-        }
-
         const person: Person = {
             name: 'Ilham',
             sayHello: function(name: string): string {
@@ -120,5 +116,21 @@ describe('Interface', function() {
             id: '1',
             name: 'Ilham'
         });
+    });
+
+    it('should support type assertions', function() {
+        const person: any = {
+            name: 'Ilham',
+            age: 25
+        };
+        
+        // Sebenarnya typescript tidak menghiraukan apakah data yang dikonversi itu benar atau tidak, contohnya di person ada "age", sedangkan di interface Person tidak ada "age"
+        const newPerson: Person = person as Person;
+
+        expect(newPerson.name).toBe('Ilham');
+
+        // expect(newPerson.age).toStrictEqual(25); // akan error karena "age" tidak ada di interface Person 
+
+        // expect(newPerson.sayHello('Joy')).toBe('Hello Joy, my name is Ilham'); // akan error karena function "sayHello" tidak ada pada object person
     });
 });

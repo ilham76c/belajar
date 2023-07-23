@@ -1,0 +1,16 @@
+## Type Assertions ##
+- Kadang kita sering berada pada situasi dimana kita tahu tipe data yang akan digunakan tapi TypeScript tidak tahu tipe data tersebut
+- Biasanya terjadi pada kasus ketika kita menggunakan kode bawaan dari JavaScript, sehingga membuat return value-nya berupa tipe data Any
+- Pada kasus ini, kita bisa melakukan konversi tipe data yang kita mau menggunakan kata kunci "as"
+- Ini disebut dengan Type Assertions
+
+
+## Kode ##
+const person: any = {
+    name: 'ilham',
+    age: 25
+};
+
+const newPerson: Person = person as Person;
+
+console.info(newPerson);
