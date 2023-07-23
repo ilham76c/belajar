@@ -99,4 +99,26 @@ describe('Interface', function() {
 
         expect(person.sayHello('Joy')).toBe('Hello Joy, my name is Ilham');
     });
+
+    it('should support intersection types', function() {
+        interface HasName {
+            name: string;
+        }
+        
+        interface HasId {
+            id: string;
+        }
+        
+        type Domain = HasId & HasName;
+
+        const domain: Domain = {
+            id: '1',
+            name: 'Ilham'
+        };
+
+        expect(domain).toStrictEqual({
+            id: '1',
+            name: 'Ilham'
+        });
+    });
 });

@@ -1,0 +1,25 @@
+## Intersection Types ##
+- Intersection merupakan cara membuat tipe data baru dengan cara menggabungkan dua tipe data lain
+- Hal ini sangat cocok ketika kita tidak bisa melakukan extends pada Interface, misalnya interface dari library atau package yang dibuat oleh orang lain dan kita tidak bisa mengubahnya
+- Kita bisa membuat type dengan menggunakan kata kunci "&"
+
+
+## Kode: Intersection Types ##
+export interface HasName {
+    name: string;
+}
+
+export interface HasId {
+    id: string;
+}
+
+export type Domain = HasId & HasName;
+
+
+## Kode: Menggunakan Intersection Types ##
+const domain: Domain = {
+    id: '1',
+    name: 'Ilham'
+};
+
+console.info(domain);
