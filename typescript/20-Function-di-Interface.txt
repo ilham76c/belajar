@@ -1,0 +1,20 @@
+## Function di Interface ##
+- Implementasi Interface di JavaScript sebenarnya adalah sebuah object
+- Seperti yang kita tahu, di JavaScript, kita bisa menambahkan function sebagai attribute di object
+- Hal ini juga bisa kita lakukan di Interface
+
+
+## Kode: Interface Person ##
+interface Person {
+    name: string;
+    sayHello(name: string): string;
+}
+
+const person: Person = {
+    name: 'Ilham',
+    sayHello: function(name: string): string {
+        return `Hello ${name}, my name is ${this.name}`;
+    }
+};
+
+console.infor(person.sayHello('Joy'));
