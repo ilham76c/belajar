@@ -1,0 +1,31 @@
+## Extending Interface ##
+- Interface bisa melanjutkan (extends) ke interface lain
+- Secara otomatis attribute interface yang di-extends juga dimiliki oleh interface yang meng-extends
+- Ini membuat kita lebih mudah ketika membuat tipe data yang kompleks
+
+
+## Kode: Employee ##
+export interface Employee {
+    id: string,
+    name: string,
+    division: string
+}
+
+export interface Manager extends Employee {
+    numberOfEmployees: number;
+}
+
+
+## Kode: Extending Interface ##
+const employee: Employee = {
+    id: '1',
+    name: 'Moh. Ilham B.',
+    division: 'IT'
+};
+
+const manager: Manager = {
+    id: '2',
+    name: 'Joy',
+    division: 'IT',
+    numberOfEmployees: 15
+};
