@@ -1,0 +1,28 @@
+## Indexable Interface ##
+- Interface juga bisa digunakan untuk membuat tipe data dengan jenis yang memiliki index, seperti Array atau Object
+
+
+## Kode: Array ##
+interface StringArray {
+    [index: number]: string
+}
+
+const names: StringArray = ['Eudora', 'Joy', 'Kagura'];
+
+console.info(names[0]);
+console.info(names[1]);
+console.info(names[2]);
+
+
+## Kode: Object ##
+interface StringDictionary {
+    [key: string]: string
+}
+
+const dictionary: StringDictionary = {
+    name: 'Moh. Ilham B.',
+    address: 'Bangkalan'
+}
+
+console.info(dictionary['name']);
+console.info(dictionary['address']);
