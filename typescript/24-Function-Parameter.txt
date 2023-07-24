@@ -1,0 +1,25 @@
+## Function Parameter ##
+- Sama seperti di JavaScript, function bisa memiliki banyak parameter, rest parameter (variable argument) sampai default value
+- Fitur yang berbeda dengan JavaScript adalah, di TypeScript setiap parameter wajib diisi, kecuali kita tentukan sebagai optional menggunakan tanda tanya "?"
+
+
+## Kode: Say Hello Function ##
+function sayHello(name: string = 'Guest'): string {
+    return `Hello ${name}`;
+}
+
+expect(sayHello('Ilham')).toBe('Hello Ilham');
+expect(sayHello()).toBe('Hello Guest');
+
+
+## Kode: Sum Function ##
+function sum(...values: number[]): number {
+    let total = 0;
+    for (const value of values) {
+        total += total;
+    }
+
+    return total;
+}
+
+expect(sum(1, 2, 3, 4, 5)).toBe(15);
