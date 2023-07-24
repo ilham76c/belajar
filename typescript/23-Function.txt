@@ -1,0 +1,19 @@
+## Function ##
+- Sama seperti di JavaScript, TypeScript juga mendukung pembuatan function
+- Cara pembuatan function di TypeScript pun sama dengan di JavaScript
+- Salah satu yang membedakan adalah, pada parameter kita perlu menentukan tipe data, dan pada function kita juga perlu menentukan tipe return value
+- Pada kasus function tidak mengembalikan value, kita bisa menggunakan tipe data void, atau tidak perlu menyebutkan sama sekalai seperti di JavaScript
+
+
+## Kode: Say Hello Function ##
+function sayHello(name: string): string {
+    return `Hello ${name}`;
+}
+
+expect(sayHello('Ilham')).toBe('Hello Ilham');
+
+function printHello(name: string): void {
+    console.info(`Hello ${name}`);
+}
+
+printHello('Ilham');
