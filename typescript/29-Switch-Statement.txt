@@ -1,0 +1,19 @@
+## Switch Statement ##
+- Switch statement di TypeScript juga sama seperti di JavaScript
+
+
+## Kode: Switch Statement ##
+function page(name: string): string {
+    switch (name) {
+        case 'home':
+            return 'Welcome to Homepage';
+        case 'about':
+            return 'About, this website is...';
+        default:
+            return 'Not Found!';
+    }
+}
+
+expect(page('home')).toBe('Welcome to Homepage');
+expect(page('about')).toBe('About, this website is...');
+expect(page('tes')).toBe('Not Found!');

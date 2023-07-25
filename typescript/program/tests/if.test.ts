@@ -29,4 +29,22 @@ describe('IF Statement', function() {
         expect(isEven(10)).toBe(true);
         expect(isEven(9)).toBe(false);
     });
+
+    it('should support switch statement', function() {
+        function page(name: string): string {
+            switch (name) {
+                case 'home':
+                    return 'Welcome to Homepage';
+                case 'about':
+                    return 'About, this website is...';
+                default:
+                    return 'Not Found!';
+            }
+        }
+        
+        expect(page('home')).toBe('Welcome to Homepage');
+        expect(page('about')).toBe('About, this website is...');
+        expect(page('tes')).toBe('Not Found!');
+        expect(page('')).toBe('Not Found!');
+    });
 });
