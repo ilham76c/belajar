@@ -1,0 +1,20 @@
+## Function Overloading ##
+- Function Overloading adalah kemampuan untuk membuat Function dengan nama yang sama, namun dengan parameter yang berbeda
+- Di JavaScript, membuat satu Function dengan dengan input data yang berbeda dan output yang berbeda sudah biasa dilakukan
+- Namun hal ini kadang bisa membuat sebuah Function tidak aman, karena bisa menghasilkan berbeda-beda tipe data
+- TypeScript memberikan kemampuan Function Overloading, agar pembuatan Function seperti ini lebih aman dilakukan 
+
+
+## Kode: Function Overloading ##
+function callMe(value: number): number;
+function callMe(value: string): string;
+function callMe(value: any) {
+    if (typeof value === 'string') {
+        return `${value} is string`;
+    } else if (typeof value === 'number') {
+        return `${value} is number`;
+    }
+}
+
+expect(callMe(100)).toBe('100 is number');
+expect(callMe('Joy')).toBe('Joy is string');

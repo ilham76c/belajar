@@ -10,7 +10,7 @@ describe('Function', function() {
             console.info(`Hello ${name}`);
         }
         
-        printHello('Ilham');
+        // printHello('Ilham');
     });
 
     it('should support default value', function() {
@@ -46,5 +46,20 @@ describe('Function', function() {
 
         expect(sayHello('Joy')).toBe('Hello Joy');
         expect(sayHello('Mas', 'Ilham')).toBe('Hello Mas Ilham');
+    });
+
+    it('should support function overloading', function() {
+        function callMe(value: number): number;
+        function callMe(value: string): string;
+        function callMe(value: any) {
+            if (typeof value === 'string') {
+                return `${value} is string`;
+            } else if (typeof value === 'number') {
+                return `${value} is number`;
+            }
+        }
+
+        expect(callMe(100)).toBe('100 is number');
+        expect(callMe('Joy')).toBe('Joy is string');
     });
 });
