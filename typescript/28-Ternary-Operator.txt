@@ -1,0 +1,2 @@
+## Ternary Operator ##
+- Ternary operator di TypeScript sama seperti ternary operator di JavaScript
