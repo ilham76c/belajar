@@ -1,0 +1,27 @@
+## Function Sebagai Parameter ##
+- Sama seperti di JavaScript, di TypeScript kita juga bisa menggunakan function sebagai parameter
+- Hal ini sering kita lakukan ketika memanggil function yang membutuhkan callback function
+- Pada TypeScript, parameter yang berupa function perlu kita beri tahu bahwa parameter tersebut adalah function
+- Kita juga bisa menggunakan Function Interface, atau bisa langsung menyebutkannya pada parameter beserta return value-nya
+
+
+## Kode: Function sebagai parameter ##
+function sayHello(name: string, filter: (name: string) => string) {
+    return `Hello ${filter(name)}`;
+}
+
+function toUpper(name: string): string {
+    return name.toUpperCase();
+}
+
+expect(sayHello('ilham', toUpper)).toBe('Hello ilham');
+
+
+## Kode: Anonymous Function ##
+function sayHello(name: string, filter: (name: string) => string) {
+    return `Hello ${filter(name)}`;
+}
+
+expect(sayHello('ilham', function (name: string): string {
+    return name.toUpperCase();
+})).toBe('Hello ilham');
