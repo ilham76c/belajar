@@ -1,0 +1,10 @@
+## While Loop ##
+- TypeScript juga mendukung perulangan While Loop seperti di JavaScript
+
+
+## Kode: While Loop ##
+let counter = 0;
+while (counter < 10) {
+    console.log(`counter ${counter}`);
+    counter++;
+}

@@ -1,0 +1,20 @@
+## Break dan Continue ##
+- Seperti di JavaScript, pada perulangan While atau Do While, kita bisa menggunakan kata kunci break dan continue
+- Hal ini juga bisa dilakukan di TypeScript
+
+
+## Kode: Break dan Continue ##
+let nomor = 0;
+do {
+    nomor++;
+
+    if (nomor === 10) {
+        break;
+    }
+
+    if (nomor % 2 === 0) {
+        continue;
+    }
+
+    console.info(`nomor ${nomor}`);
+} while(true);

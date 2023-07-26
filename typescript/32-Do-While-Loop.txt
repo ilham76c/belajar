@@ -1,0 +1,6 @@
+## Do While Loop ##
+let counter = 0;
+do {
+    console.info(counter);
+    counter++;
+} while(counter < 10);
