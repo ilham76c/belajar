@@ -1,0 +1,20 @@
+The Three States
+- Harap diperhatikan, ini adalah hal utama yang wajib dimengerti di Git agar selanjutnya bisa mengerti dengan baik
+- Git memiliki tiga state terhadap file kita: modified, staged dan committed
+- Modified artinya kita mengubah (menambah, mengedit, menghapus) file, namun belum disimpan secara permanen ke repository
+- Staged artinya kita menandai modifikasi yang kita lakukan terhadap file akan disimpan secara permanen ke repository
+- Committed artinya data sudah aman disimpan di repository
+
+
+Three Section
+- Tiga state sebelumnya di dalam Git dilakukan di section yang berbeda-beda, yaitu Working Directory, Staging Area dan Repository
+- Saat kita melakukan modifikasi file, itu dilakukan di working directory
+- Staging Area merupakan section dimana file sudah disiapkan untuk disimpan secara permanen, di Staging Area semua informasi perubahan file akan disimpan
+- Repository merupakan tempat dimana semua file dan database riwayat versi file disimpan
+
+
+Workflow
+- Sekarang kita sudah tahu tentang arsitektur Three Tree, sekarang pertanyaannya, bagaimana alur kerja menggunakan Git
+- Secara sederhana, setiap perubahan akan kita lakukan di working directory
+- Jika ada yang mau kita siapkan untuk disimpan secara permanen, kita akan bawa perubahan tersebut ke staging index
+- Selanjutnya, kita bisa melakukan penyimpanan versi baru secara permanen ke repository
