@@ -1,0 +1,43 @@
+Membatalkan Penambahan File
+- Jika kita menambah  file di Working Directory, lalu misal kita ingin membatalkan perubahannya
+- Caranya cukup sederhana, kita hanya perlu menghapus file tersebut, atau bisa menggunakan perintah "git clean -f"
+
+Kode
+$ touch file1.txt file2.txt file3.txt #membuat file
+$ git clean -f #membatalkan penambahan file yg masih untracked atau masih berstatus "New File" di Working Directory
+
+
+Membatalkan Perubahan File
+- Jika kita ingin membatalkan perubahan file yang telah kita lakukan, kita bisa menggunakan perintah "git restore namafile"
+
+Kode
+$ git restore file4.txt #membatalkan perubahan pada file yang berstatus "Modified" di Working Directory
+
+
+Membatalkan Penghapusan File
+- Penghapusan file sebenarnya sama dengan perubahan file, jadi jika kita ingin membatalkan penghapusan file, kita bisa gunakan perintah yang sama dengan membatalkan perubahan file :
+git restore namafile
+
+Kode
+$ rm file1.txt #menghapus file
+$ git restore file1.txt #membatalkan file yang terhapus atau berstatus "Deleted" di Working Directory
+
+
+
+Membatalkan dari Staging Index
+- Perintah git restore hanya bisa dilakukan untuk membatalkan perubahan yang terjadi di Working Directory
+- Artinya jika perubahan terlanjur kita masukkan ke Staging Index, maka untuk membatalkannya tidak bisa kita lakukan secara langsung dari Staging Index
+- Kita perlu mengembalikan posisi dari Staging Index ke Working Directory terlebih dahulu, caranya kita bisa gunakan perintah "git restore --staged namafile"
+
+Kode
+$ rm file1.txt #menghapus file
+$ git add file1.txt #memindahkan file1.txt dari Working Directory ke Staging
+$ git restore --staged file1.txt #memindahkan file1.txt dari Staging kembali ke Working Directory
+$ git restore file1.txt #membatalkan file yang terhapus atau berstatus "Deleted" di Working Directory
+
+
+Membatalkan Perubahan yang Sudah di Commit
+- Bagaimana jika perubahan yang kita lakukan terlanjur di commit?
+- Tidak ada cara yang bisa kita lakukan jika perubahan sudah terlanjur di commit
+- Yang bisa kita lakukan adalah dengan dua cara, Rollback Commit atau Revert Commit
+- Kedua cara tersebut akan kita bahas di materi sendiri-sendiri
