@@ -1,0 +1,11 @@
+Menambah File
+- Untuk menambah file baru ke Repository, kita cukup tambahkan file nya saja
+- Secara otomatis file yang kita tambahkan awalnya akan berada di working directory
+- Secara default saat menambah file baru, file tersebut tidak akan di track perubahannya
+- Agar perubahan di track, kita harus pindahkan dari working directory ke staging index
+
+
+Kode 
+$ git status #check untracked and modified file
+$ git add file1.txt #memindahkan file dari Working Directory ke Staging
+$ git commit -m 'add file1.txt' #memindahkan semua file di Staging ke Repository
