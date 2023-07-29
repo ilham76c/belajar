@@ -1,0 +1,11 @@
+Menghapus File
+- Untuk menghapus file di Repository, kita cukup lakukan delete file nya di folder nya
+- Secara otomatis Git akan mendeteksi file yang hilang
+- Sama seperti menambah dan menghapus, jika ingin simpan secara permanen di Repository, kita harus  menambahkan operasi tersebut  ke Staging Index,  lalu commit ke Repository 
+
+
+Kode
+$ git status #check untracked, deleted and modified file
+$ rm file1.txt #menghapus file
+$ git add file1.txt #memindahkan file yang terhapus dari Working Directory ke Staging
+$ git commit -m 'menghapus file1.txt' #memindahkan file yang terhapus dari Staging ke Repository

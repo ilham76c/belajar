@@ -10,5 +10,5 @@ Melihat Perubahan File
 
 
 Kode
-$ git status #check untracked and modified file
+$ git status #check untracked, deleted and modified file
 $ git diff file2.txt #melihat perubahan yang terjadi di dalam file

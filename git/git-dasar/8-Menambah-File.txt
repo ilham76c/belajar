@@ -6,6 +6,6 @@ Menambah File
 
 
 Kode 
-$ git status #check untracked and modified file
+$ git status #check untracked, deleted and modified file
 $ git add file1.txt #memindahkan file dari Working Directory ke Staging
 $ git commit -m 'add file1.txt' #memindahkan semua file di Staging ke Repository
