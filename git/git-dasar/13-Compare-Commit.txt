@@ -15,3 +15,18 @@ Difftool
 
 Kode
 $ git difftool 0c97ff4 f727f4d #membandingkan perubahan antar commit dengan bantuan tool
+
+
+Setting Difftool menggunakan Visual Studio Code
+$ git config --global -e #edit git global config, lalu tambahkan config dibawah ini
+
+[core]
+  editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
