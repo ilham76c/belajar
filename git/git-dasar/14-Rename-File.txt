@@ -1,0 +1,6 @@
+Rename File
+- Hal yang paling menarik di Git adalah, Git bisa mendeteksi rename file
+- Secara sederhana sebenarnya rename file merupakan operasi gabungan antara hapus file, lalu menambah file baru dengan isi yang sama
+- Namun Git bisa otomatis mendeteksi jika terjadi perubahan nama file, karena isi file sebagian besar masih sama
+- Jika kita mengganti nama dari sebuah file yang sudah ada di Staging, maka statusnya akan menjadi "rename"
+- Sedangkan, jika kita mengganti nama dari sebuah file yang ada di Working Directory, maka status file lama akan menjadi "delete" dan file dengan nama baru akan menjadi Untracked Files
