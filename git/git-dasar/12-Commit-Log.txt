@@ -25,7 +25,7 @@ $ git log --oneline --graph #melihat history commit dalam bentuk graph
 
 Melihat Detail Commit
 - Kadang kita ingin melihat detail perubahan yang terjadi pada sebuah commit
-- Untuk melakukan itu, kita bisa gunakan perintah "git show {hash}"
+- Untuk melakukan itu, kita bisa gunakan perintah "git show hash1"
 
 Kode
 $ git show f24b223 #melihat detail commit
