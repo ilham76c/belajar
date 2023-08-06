@@ -1,0 +1,40 @@
+Reset Commit
+- Sebelumnya kita sudah tahu membatalkan perubahan, namun bagaimana jika ternyata perubahan sudah terlanjur kita commit ke Repository?
+- Untuk hal seperti itu, kita bisa melakukan reset commit
+- Reset commit merupakan mekanisme dimana kita menggeser HEAD pointer ke posisi commit yang kita mau, artinya commit selanjutnya akan dilakukan pada posisi HEAD baru
+- Untuk melakukan reset commit, kita bisa gunakan perintah "git reset <mode> hash"
+- Ada beberapa mode pengaturan melakukan reset commit
+
+
+Mode Git Reset
+--soft, memindahkan HEAD pointer, namun tidak melakukan perubahan apapun di Staging Index dan Working Directory
+--mixed (default), memindahkan HEAD pointer, mengubah Staging Index menjadi sama seperti dengan Repository, namun tidak mengubah apapun di Working Directory
+--hard, memindahkan HEAD pointer, dan mengubah Staging Index dan Working Directory sehingga sama dengan Repository
+
+
+Rewrite Riwayat Commit
+- Jika kita melakukan reset, namun kita belum membuat commit baru
+- Kita masih bisa kembali maju lagi ke commit yang paling baru
+- Namun jika kita membuat commit baru, secara otomatis commit lama akan ditimpa oleh commit baru
+
+
+Kode
+2762d4c (HEAD -> main, origin/main) Git: Rename File
+6aed3d6 Git: Compare Commit (Setting Difftool)
+e802816 Git: Compare Commit
+9a90afa Git: Commit Log
+10ec402 Git: Membatalkan Perubahan
+f24b223 Git: Menghapus File
+30e912e Git: Mengubah File
+0f1e903 Git: Menambahkan File
+b631202 Git: Hash
+0b122fa Git: Workflow
+
+$ git reset --soft 6aed3d6
+$ git reset --soft 2762d4c #selama belum ada commit baru setelah melakukan reset, maka masih bisa kembali ke HEAD
+
+$ git reset --mixed e802816
+$ git reset --mixed 2762d4c #selama belum ada commit baru setelah melakukan reset, maka masih bisa kembali ke HEAD
+
+$ git reset --hard 9a90afa
+$ git reset --hard 2762d4c #selama belum ada commit baru setelah melakukan reset, maka masih bisa kembali ke HEAD
