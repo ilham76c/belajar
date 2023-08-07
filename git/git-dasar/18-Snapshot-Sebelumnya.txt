@@ -1,0 +1,16 @@
+Snapshot Sebelumnya
+- Git juga memiliki fitur seperti mesin waktu, dimana kita bisa kembali pada snapshot sebelumnya
+- Kita bisa tentukan kemana tujuan snapshot kita hanya dengan menggunakan hash commit
+- Cara jika kita ingin menuju ke snapshot tertentu, cukup gunakan perintah "git checkout hash"
+- Jika ingin kembali ke paling awal, kita bisa gunakan perintah "git checkout namabranch"
+
+
+Kode
+$ git checkout 2762d4c #kembali ke kondisi commit tertentu
+$ git checkout master #kembali ke commit paling akhir atau HEAD
+
+
+Git Branch
+- Materi branching akan dibahas pada course terpisah, namun secara default saat kita membuat Git Repository, maka secara otomatis Git akan membuat branch
+- Untuk melihat nama branch saat ini, kita bisa gunakan perintah
+"git branch --show-current"
