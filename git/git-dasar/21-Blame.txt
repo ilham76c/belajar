@@ -1,0 +1,8 @@
+Blame
+- Saat membuat kode program kadang kita ingin tahu, siapa yang menambahkan baris kode program tersebut, dan apa saja yang ditambahkan
+- Git memiliki fitur yang bernama blame, ini digunakan untuk mencari tahu, siapa yang menambah perubahan pada file dan juga detail commit
+- Caranya kita bisa gunakan perintah "git blame namafile"
+
+
+Kode
+$ git blame 13-Compare-Commit.txt #menampilkan detail perubahan pada tiap baris di dalam file
